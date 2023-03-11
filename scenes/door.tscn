@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://dqr8xwov6x77f"]
+
+[ext_resource type="Script" path="res://door.gd" id="1_k620p"]
+[ext_resource type="Script" path="res://door_interact.gd" id="2_ijjnc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r7frm"]
+size = Vector3(3, 10, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m3snm"]
+albedo_color = Color(0.313726, 1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2wywt"]
+material = SubResource("StandardMaterial3D_m3snm")
+size = Vector3(3, 3, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k3mvr"]
+size = Vector3(3, 3, 0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e0yum"]
+
+[node name="DoorNode" type="Node3D"]
+metadata/color = ""
+
+[node name="Door" type="StaticBody3D" parent="."]
+script = ExtResource("1_k620p")
+metadata/action = false
+
+[node name="Area3D" type="Area3D" parent="Door"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0696564)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_ijjnc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0791764)
+shape = SubResource("BoxShape3D_r7frm")
+
+[node name="DoorMesh" type="MeshInstance3D" parent="Door"]
+mesh = SubResource("BoxMesh_2wywt")
+
+[node name="DoorWall" type="CollisionShape3D" parent="Door"]
+shape = SubResource("BoxShape3D_k3mvr")
+
+[node name="DoorStop" type="StaticBody3D" parent="."]
+
+[node name="Bottom" type="CollisionShape3D" parent="DoorStop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -5, 2.08165e-12)
+shape = SubResource("BoxShape3D_e0yum")
+
+[node name="Top" type="CollisionShape3D" parent="DoorStop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2, 2.08165e-12)
+shape = SubResource("BoxShape3D_e0yum")

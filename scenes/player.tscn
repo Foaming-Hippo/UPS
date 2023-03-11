@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://roo6uger2qf8"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_h4hm1"]
+[ext_resource type="PackedScene" uid="uid://bywr72ybgssck" path="res://ui.tscn" id="2_4yqj4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_23r7k"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_6dbui"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3jc0c"]
+radius = 0.005
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_h4hm1")
+metadata/_edit_group_ = true
+metadata/keys = []
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_23r7k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_6dbui")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.527357, 0.020978)
+
+[node name="player_interact" type="Area3D" parent="Camera3D"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.527357, 0.360156)
+collision_layer = 2
+collision_mask = 2
+metadata/interacting = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/player_interact"]
+transform = Transform3D(2.25947e-15, 4.37114e-08, 1, 1, -4.37114e-08, -3.48787e-16, 4.37114e-08, 1, -4.37114e-08, 0, 0.471252, -1.69807)
+shape = SubResource("CylinderShape3D_3jc0c")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_size = 1.0
+omni_range = 4096.0
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CapsuleShape3D_23r7k")
+
+[node name="UI" parent="." instance=ExtResource("2_4yqj4")]

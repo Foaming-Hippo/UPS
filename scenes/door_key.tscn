@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dofg74crgik1u"]
+
+[ext_resource type="Script" path="res://door_key.gd" id="1_8y68e"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w4bry"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82pu8"]
+albedo_color = Color(0.129412, 1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ly7ga"]
+material = SubResource("StandardMaterial3D_82pu8")
+size = Vector3(0.5, 0.5, 0.5)
+
+[node name="DoorKey" type="StaticBody3D"]
+metadata/color = ""
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_8y68e")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_w4bry")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_ly7ga")

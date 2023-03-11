@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://dv1ku375xrxxi"]
+
+[ext_resource type="PackedScene" uid="uid://roo6uger2qf8" path="res://player.tscn" id="1_dm635"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rwymn"]
+size = Vector3(999, 1, 999)
+
+[sub_resource type="BoxMesh" id="BoxMesh_d0k4i"]
+size = Vector3(999, 1, 999)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hldk8"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yd240"]
+size = Vector3(10, 1, 10)
+
+[node name="Main" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01122, 0.283519, -0.180073)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_rwymn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("BoxMesh_d0k4i")
+
+[node name="MenuButton" type="MenuButton" parent="."]
+offset_right = 586.0
+offset_bottom = 356.0
+text = "UI TEXT"
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_dm635")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.05543, 0)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.438987, -0.898481, -0.00470281, -0.107127, 0.0575363, -0.992579, 0.892084, -0.435226, -0.121509, 7.20747, 3.98638, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
+mesh = SubResource("BoxMesh_hldk8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.60387, 0)
+shape = SubResource("BoxShape3D_yd240")
