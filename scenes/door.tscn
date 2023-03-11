@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dqr8xwov6x77f"]
 
-[ext_resource type="Script" path="res://door.gd" id="1_k620p"]
-[ext_resource type="Script" path="res://door_interact.gd" id="2_ijjnc"]
+[ext_resource type="Script" path="res://scripts/door.gd" id="1_4xt7q"]
+[ext_resource type="Script" path="res://scripts/door_interact.gd" id="2_enn3d"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r7frm"]
 size = Vector3(3, 10, 1)
@@ -22,14 +22,14 @@ size = Vector3(3, 3, 0.5)
 metadata/color = ""
 
 [node name="Door" type="StaticBody3D" parent="."]
-script = ExtResource("1_k620p")
+script = ExtResource("1_4xt7q")
 metadata/action = false
 
 [node name="Area3D" type="Area3D" parent="Door"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0696564)
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("2_ijjnc")
+script = ExtResource("2_enn3d")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Door/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0791764)

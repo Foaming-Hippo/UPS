@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dofg74crgik1u"]
 
-[ext_resource type="Script" path="res://door_key.gd" id="1_8y68e"]
+[ext_resource type="Script" path="res://scripts/door_key.gd" id="1_2ssj2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w4bry"]
 size = Vector3(0.5, 0.5, 0.5)
@@ -18,7 +18,7 @@ metadata/color = ""
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 4
 collision_mask = 4
-script = ExtResource("1_8y68e")
+script = ExtResource("1_2ssj2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_w4bry")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://roo6uger2qf8"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_h4hm1"]
-[ext_resource type="PackedScene" uid="uid://bywr72ybgssck" path="res://ui.tscn" id="2_4yqj4"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_gngof"]
+[ext_resource type="PackedScene" uid="uid://bywr72ybgssck" path="res://scenes/ui.tscn" id="2_4yqj4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_23r7k"]
 
@@ -11,7 +11,7 @@
 radius = 0.005
 
 [node name="Player" type="CharacterBody3D"]
-script = ExtResource("1_h4hm1")
+script = ExtResource("1_gngof")
 metadata/_edit_group_ = true
 metadata/keys = []
 

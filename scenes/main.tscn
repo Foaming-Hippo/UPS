@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dv1ku375xrxxi"]
+[gd_scene load_steps=6 format=3 uid="uid://bip3g31ph82da"]
 
-[ext_resource type="PackedScene" uid="uid://roo6uger2qf8" path="res://player.tscn" id="1_dm635"]
+[ext_resource type="PackedScene" uid="uid://roo6uger2qf8" path="res://scenes/player.tscn" id="1_dm635"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rwymn"]
 size = Vector3(999, 1, 999)
