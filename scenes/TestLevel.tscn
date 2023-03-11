@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ived765i2gat"]
+[gd_scene load_steps=7 format=3 uid="uid://ived765i2gat"]
 
 [ext_resource type="PackedScene" uid="uid://roo6uger2qf8" path="res://scenes/player.tscn" id="1_od6uf"]
 [ext_resource type="PackedScene" uid="uid://dqr8xwov6x77f" path="res://scenes/door.tscn" id="2_6ie3r"]
@@ -10,16 +10,13 @@ size = Vector3(10, 1, 40)
 [sub_resource type="BoxShape3D" id="BoxShape3D_3lq17"]
 size = Vector3(10, 1, 40)
 
-[sub_resource type="BoxMesh" id="BoxMesh_pytqv"]
-size = Vector3(4, 3, 0.5)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_v7k35"]
 size = Vector3(4, 3, 0.5)
 
 [node name="Test" type="Node3D"]
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_od6uf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.58945, 8.16589)
+transform = Transform3D(-0.846361, 0, -0.53261, 0, 1, 0, 0.53261, 0, -0.846361, 0, 1.62406, 8.16589)
 
 [node name="Floor" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 25)
@@ -34,31 +31,14 @@ shape = SubResource("BoxShape3D_3lq17")
 [node name="Wall" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.516, 2, 4.911)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00235081, 0, -0.157245)
-mesh = SubResource("BoxMesh_pytqv")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall/MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.01386, 0, 0.0228815)
-mesh = SubResource("BoxMesh_pytqv")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall"]
 shape = SubResource("BoxShape3D_v7k35")
-
-[node name="Floor2" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, -15.5018)
-metadata/_edit_group_ = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor2"]
-mesh = SubResource("BoxMesh_0uj8w")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor2"]
-shape = SubResource("BoxShape3D_3lq17")
 
 [node name="DoorKey" parent="." instance=ExtResource("4_d48fa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.69966, 0.783888, 9.23782)
 metadata/color = "blue"
 
-[node name="DoorNode" parent="." instance=ExtResource("2_6ie3r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.98438, 4.74076)
+[node name="door" parent="." instance=ExtResource("2_6ie3r")]
+transform = Transform3D(-9.61651e-09, 7.67331e-17, 0.22, 7.67331e-17, 0.22, -7.67331e-17, -0.22, 7.67331e-17, -9.61651e-09, 0.0158129, 0.507981, 15.4561)
 metadata/color = "blue"
+metadata/_edit_group_ = true
