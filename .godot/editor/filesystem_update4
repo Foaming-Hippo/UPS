@@ -1,0 +1,9 @@
+res://scenes/TestLevel.tscn
+res://scenes/door.tscn
+res://scenes/player.tscn
+res://scenes/ui.tscn
+res://scenes/door_key.tscn
+res://scenes/mail.tscn
+res://suckgun.tscn
+res://scenes/mail.gd
+res://scripts/player_stats.gd

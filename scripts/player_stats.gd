@@ -19,11 +19,15 @@ func _process(delta):
 func add_key(key):
 	keys.append(key)
 	
+func add_money(amt):
+	money += amt
 
 func print_label():
 	var labelText = ""
 	
-	labelText += "Keys:"
+
+	labelText += "Succulent Mails: " + str(money)
+	labelText += "\nKeys:"
 	for i in keys:
 		labelText += "\n      " + i + " key"
 	

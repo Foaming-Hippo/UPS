@@ -1,0 +1,6 @@
+MeshInstance3D
+CollisionShape3D
+Area3D
+StaticBody3D
+RayCast3D
+ImporterMeshInstance3D

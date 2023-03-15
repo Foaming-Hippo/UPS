@@ -42,7 +42,7 @@ func _physics_process(delta):
 		direction -= aim[0]
 	if Input.is_action_pressed("move_left"):
 		direction += aim[0]
-		
+	
 	
 	velocity.x = -1 * direction.x * SPEED
 	velocity.z = -1 * direction.z * SPEED

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://roo6uger2qf8"]
+[gd_scene load_steps=8 format=3 uid="uid://roo6uger2qf8"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_gngof"]
 [ext_resource type="PackedScene" uid="uid://bywr72ybgssck" path="res://scenes/ui.tscn" id="2_4yqj4"]
@@ -10,10 +10,17 @@
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_3jc0c"]
 radius = 0.005
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m84eq"]
+height = 5.738
+
+[sub_resource type="BoxMesh" id="BoxMesh_ubc4g"]
+size = Vector3(0.1, 0.2, 1)
+
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_gngof")
 metadata/_edit_group_ = true
 metadata/keys = []
+metadata/money = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_23r7k")
@@ -34,6 +41,20 @@ metadata/interacting = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/player_interact"]
 transform = Transform3D(2.25947e-15, 4.37114e-08, 1, 1, -4.37114e-08, -3.48787e-16, 4.37114e-08, 1, -4.37114e-08, 0, 0.471252, -1.69807)
 shape = SubResource("CylinderShape3D_3jc0c")
+
+[node name="SuckCone" type="Area3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.527357, -0.020978)
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/SuckCone"]
+transform = Transform3D(1, 0, -1.5246e-23, -1.5246e-23, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.501796, -2.35438)
+shape = SubResource("CapsuleShape3D_m84eq")
+
+[node name="RightArm" type="MeshInstance3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.513504, -0.527357, -0.54907)
+mesh = SubResource("BoxMesh_ubc4g")
+skeleton = NodePath("../..")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 light_size = 1.0
