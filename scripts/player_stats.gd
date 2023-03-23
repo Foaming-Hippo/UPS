@@ -2,6 +2,7 @@ extends RichTextLabel
 
 var keys
 var money
+var health
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,11 +23,17 @@ func add_key(key):
 func add_money(amt):
 	money += amt
 
+func set_health(val):
+	health = val
+	if health > 100:
+		health = 100
+	
+
 func print_label():
 	var labelText = ""
 	
-
-	labelText += "Succulent Mails: " + str(money)
+	labelText += "Health: " + str(health)
+	labelText += "\nSucculent Mails: " + str(money)
 	labelText += "\nKeys:"
 	for i in keys:
 		labelText += "\n      " + i + " key"

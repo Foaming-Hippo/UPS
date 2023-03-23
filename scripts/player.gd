@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 
 const SPEED = 3.5
+const SPRINT = 10
 const ACCEL = 0.5
 const JUMP_VELOCITY = 4.5
 const MOUSE_SENS = 0.05
@@ -13,10 +14,14 @@ var yaw = 0
 var pitch = 0
 var rotation_vect
 var moving = false
+var sprinting = false
 
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	set_meta("Health", 90)
+	get_node("UI/player_info").set_health(get_meta("Health"))
+
 
 
 func _physics_process(delta):
@@ -33,8 +38,14 @@ func _physics_process(delta):
 	var aim = get_node("Camera3D").get_global_transform().basis
 	var direction = Vector3()
 	
+	if Input.is_action_pressed("sprint") and Input.is_action_pressed("move_up"):
+			sprinting = true
+	else:
+			sprinting = false
+	
 	if Input.is_action_pressed("move_up"):
 		direction += aim[2]
+		
 	if Input.is_action_pressed("move_down"):
 		direction -= aim[2]
 		
@@ -43,9 +54,12 @@ func _physics_process(delta):
 	if Input.is_action_pressed("move_left"):
 		direction += aim[0]
 	
-	
-	velocity.x = -1 * direction.x * SPEED
-	velocity.z = -1 * direction.z * SPEED
+	if sprinting:
+		velocity.x = -1 * direction.x * SPRINT
+		velocity.z = -1 * direction.z * SPRINT
+	else:
+		velocity.x = -1 * direction.x * SPEED
+		velocity.z = -1 * direction.z * SPEED
 
 	move_and_slide()
 
