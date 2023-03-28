@@ -1,13 +1,15 @@
 extends RichTextLabel
 
 var keys
-var money
+var mail
 var health
+var money
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	keys = []
 	money = 0
+	keys = []
+	mail = 0
 	print_label()
 	pass # Replace with function body.
 
@@ -20,20 +22,24 @@ func _process(delta):
 func add_key(key):
 	keys.append(key)
 	
-func add_money(amt):
-	money += amt
+func add_mail(amt):
+	mail += amt
 
 func set_health(val):
 	health = val
 	if health > 100:
 		health = 100
+		
+func add_money(dollar):
+	money += dollar
 	
 
 func print_label():
 	var labelText = ""
 	
 	labelText += "Health: " + str(health)
-	labelText += "\nSucculent Mails: " + str(money)
+	labelText += "\nSucculent Mails: " + str(mail)
+	labelText += "\nMoney: " + str(money)
 	labelText += "\nKeys:"
 	for i in keys:
 		labelText += "\n      " + i + " key"

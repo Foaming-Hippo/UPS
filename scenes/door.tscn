@@ -744,6 +744,7 @@ bone_name = "Plane"
 bone_idx = 9
 
 [node name="Plane" type="MeshInstance3D" parent="Door_rig/Skeleton3D/Plane"]
+transform = Transform3D(1, 0, 0, 5.68434e-14, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_6s0en")
 skeleton = NodePath("")
 

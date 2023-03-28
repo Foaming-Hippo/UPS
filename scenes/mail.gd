@@ -15,5 +15,5 @@ func _process(delta):
 		
 		
 		if get_parent().move_and_collide((move - get_parent().global_position) * delta * 3) != null:
-			get_overlapping_areas()[0].get_parent().get_parent().get_node("UI/player_info").add_money(1)
+			get_overlapping_areas()[0].get_parent().get_parent().get_node("UI/player_info").add_mail(1)
 			get_parent().queue_free()

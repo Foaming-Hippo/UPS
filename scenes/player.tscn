@@ -22,6 +22,7 @@ metadata/_edit_group_ = true
 metadata/keys = []
 metadata/money = 0
 metadata/Health = 100
+metadata/MoneyMoney = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_23r7k")
