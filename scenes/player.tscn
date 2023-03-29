@@ -34,7 +34,6 @@ mesh = SubResource("CapsuleMesh_6dbui")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.527357, 0.020978)
 
 [node name="player_interact" type="Area3D" parent="Camera3D"]
-unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.527357, 0.360156)
 collision_layer = 2
 collision_mask = 2
@@ -63,8 +62,8 @@ light_size = 1.0
 omni_range = 4096.0
 
 [node name="Area3D" type="Area3D" parent="."]
-collision_layer = 4
-collision_mask = 4
+collision_layer = 20
+collision_mask = 20
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("CapsuleShape3D_23r7k")

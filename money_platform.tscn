@@ -12,7 +12,7 @@ size = Vector3(1, 0.1, 1)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8syk7"]
 points = PackedVector3Array(-0.5, -0.05, -0.5, -0.5, 0.05, -0.5, 0.5, -0.05, -0.5, -0.5, -0.05, 0.5, -0.5, 0.05, 0.5, 0.5, 0.05, -0.5, 0.5, -0.05, 0.5, 0.5, 0.05, 0.5)
 
-[node name="StaticBody3D" type="StaticBody3D"]
+[node name="money plate" type="StaticBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_3khga")

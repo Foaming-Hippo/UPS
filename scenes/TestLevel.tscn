@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ived765i2gat"]
+[gd_scene load_steps=10 format=3 uid="uid://ived765i2gat"]
 
 [ext_resource type="PackedScene" uid="uid://roo6uger2qf8" path="res://scenes/player.tscn" id="1_od6uf"]
 [ext_resource type="PackedScene" uid="uid://dqr8xwov6x77f" path="res://scenes/door.tscn" id="2_6ie3r"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dofg74crgik1u" path="res://scenes/door_key.tscn" id="4_d48fa"]
 [ext_resource type="PackedScene" uid="uid://bqpc467iyfh35" path="res://health.tscn" id="5_u7arj"]
 [ext_resource type="PackedScene" uid="uid://dvt3l62ephgmo" path="res://money_platform.tscn" id="6_d1254"]
+[ext_resource type="PackedScene" uid="uid://c4b480nmio07b" path="res://Cop.tscn" id="7_2wuaa"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0uj8w"]
 size = Vector3(10, 1, 40)
@@ -61,8 +62,11 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.21409, 0.856388, 13.1
 [node name="mail8" parent="." instance=ExtResource("4_bkjje")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.139, 0.856388, 11.6944)
 
-[node name="StaticBody3D" parent="." instance=ExtResource("5_u7arj")]
+[node name="potion" parent="." instance=ExtResource("5_u7arj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.89764, 1.74791, 9.14338)
 
-[node name="StaticBody3D2" parent="." instance=ExtResource("6_d1254")]
+[node name="money plate" parent="." instance=ExtResource("6_d1254")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.50147, 0.500479, 5.51526)
+
+[node name="cop" parent="." instance=ExtResource("7_2wuaa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0966573, 2.38107, 28.314)
