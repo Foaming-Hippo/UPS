@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ived765i2gat"]
+[gd_scene load_steps=15 format=3 uid="uid://ived765i2gat"]
 
 [ext_resource type="PackedScene" uid="uid://roo6uger2qf8" path="res://scenes/player.tscn" id="1_od6uf"]
 [ext_resource type="PackedScene" uid="uid://dqr8xwov6x77f" path="res://scenes/door.tscn" id="2_6ie3r"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bqpc467iyfh35" path="res://health.tscn" id="5_u7arj"]
 [ext_resource type="PackedScene" uid="uid://dvt3l62ephgmo" path="res://money_platform.tscn" id="6_d1254"]
 [ext_resource type="PackedScene" uid="uid://c4b480nmio07b" path="res://Cop.tscn" id="7_2wuaa"]
+[ext_resource type="ArrayMesh" uid="uid://daqyfyi17dp2p" path="res://models/mail.obj" id="8_r6hqh"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0uj8w"]
 size = Vector3(10, 1, 40)
@@ -14,13 +15,45 @@ size = Vector3(10, 1, 40)
 [sub_resource type="BoxShape3D" id="BoxShape3D_3lq17"]
 size = Vector3(10, 1, 40)
 
+[sub_resource type="Curve" id="Curve_efifb"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.875, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_2lie8"]
+curve = SubResource("Curve_efifb")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5arbd"]
+emission_shape = 1
+emission_sphere_radius = 0.3
+spread = 56.05
+gravity = Vector3(0, 0, 0)
+angle_min = -720.0
+angle_max = 554.2
+scale_min = 0.2
+scale_max = 0.2
+scale_curve = SubResource("CurveTexture_2lie8")
+collision_mode = 2
+
+[sub_resource type="Skin" id="Skin_ojwof"]
+
 [node name="Test" type="Node3D"]
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_od6uf")]
-transform = Transform3D(-0.846361, 0, -0.53261, 0, 1, 0, 0.53261, 0, -0.846361, 0, 1.62406, 8.16589)
+transform = Transform3D(-0.990397, 0, -0.138256, 0, 1, 0, 0.138256, 0, -0.990397, 0.154512, 1.62406, 9.02414)
+
+[node name="GPUParticlesAttractorVectorField3D" type="GPUParticlesAttractorVectorField3D" parent="CharacterBody3D"]
+transform = Transform3D(0.991134, 0, -0.132862, 0, 1, 0, 0.132862, 0, 0.991134, 0.187856, -0.0295179, -1.29815)
+rotation_edit_mode = 1
+strength = -11.35
+attenuation = 0.128546
+directionality = 1.0
+size = Vector3(1.18488, 1.18235, 5.61228)
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="CharacterBody3D"]
+size = Vector3(1.29907, 1.91746, 1.11884)
 
 [node name="Floor" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 25)
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 2.08165e-12, 2.08165e-12, 25)
 metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
@@ -70,3 +103,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.50147, 0.500479, 5.51526)
 
 [node name="cop" parent="." instance=ExtResource("7_2wuaa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0966573, 2.38107, 28.314)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.85358, 1.37182, 11.8891)
+amount = 25
+lifetime = 5.16
+speed_scale = 0.79
+visibility_aabb = AABB(-61.1883, -72.0545, -120.142, 122.377, 144.109, 240.284)
+process_material = SubResource("ParticleProcessMaterial_5arbd")
+draw_pass_1 = ExtResource("8_r6hqh")
+draw_skin = SubResource("Skin_ojwof")
+
+[node name="GPUParticlesCollisionHeightField3D" type="GPUParticlesCollisionHeightField3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.2796)
+size = Vector3(60.5789, 51.5727, 148.197)

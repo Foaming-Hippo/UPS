@@ -11,7 +11,7 @@ func _ready():
 
 
 # Called every frame. 'delta' i8s the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	overlap = get_overlapping_areas()
 	
 	# Player walks within key pickup range

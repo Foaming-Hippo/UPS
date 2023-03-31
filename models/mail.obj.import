@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://daqyfyi17dp2p"
+path="res://.godot/imported/mail.obj-e3e0cb5da09e28e4e2514cba36ad082b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/mail.obj-e3e0cb5da09e28e4e2514cba36ad082b.mesh"]
+
+source_file="res://models/mail.obj"
+dest_files=["res://.godot/imported/mail.obj-e3e0cb5da09e28e4e2514cba36ad082b.mesh", "res://.godot/imported/mail.obj-e3e0cb5da09e28e4e2514cba36ad082b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
