@@ -16,7 +16,7 @@ size = Vector3(10, 1, 40)
 size = Vector3(10, 1, 40)
 
 [sub_resource type="Curve" id="Curve_efifb"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.118182), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.0545454), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_2lie8"]
@@ -40,17 +40,6 @@ collision_mode = 2
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_od6uf")]
 transform = Transform3D(-0.990397, 0, -0.138256, 0, 1, 0, 0.138256, 0, -0.990397, 0.154512, 1.62406, 9.02414)
-
-[node name="GPUParticlesAttractorVectorField3D" type="GPUParticlesAttractorVectorField3D" parent="CharacterBody3D"]
-transform = Transform3D(0.991134, 0, -0.132862, 0, 1, 0, 0.132862, 0, 0.991134, 0.187856, -0.0295179, -1.29815)
-rotation_edit_mode = 1
-strength = -11.35
-attenuation = 0.128546
-directionality = 1.0
-size = Vector3(1.18488, 1.18235, 5.61228)
-
-[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="CharacterBody3D"]
-size = Vector3(1.29907, 1.91746, 1.11884)
 
 [node name="Floor" type="StaticBody3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 2.08165e-12, 2.08165e-12, 25)
@@ -106,9 +95,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0966573, 2.38107, 28.314)
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.85358, 1.37182, 11.8891)
+rotation_edit_mode = 1
 amount = 25
-lifetime = 1.32
-speed_scale = 0.79
+lifetime = 22.69
 randomness = 1.0
 visibility_aabb = AABB(-61.1883, -72.0545, -120.142, 122.377, 144.109, 240.284)
 process_material = SubResource("ParticleProcessMaterial_5arbd")

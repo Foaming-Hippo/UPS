@@ -1,7 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://roo6uger2qf8"]
+[gd_scene load_steps=23 format=3 uid="uid://roo6uger2qf8"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_gngof"]
 [ext_resource type="PackedScene" uid="uid://bywr72ybgssck" path="res://scenes/ui.tscn" id="2_4yqj4"]
+[ext_resource type="Texture2D" uid="uid://cuiqntwidn1bn" path="res://models/R (5).png" id="2_ge2og"]
+[ext_resource type="Texture2D" uid="uid://dkb112s3i7qka" path="res://models/arm.png" id="2_ijn1w"]
+[ext_resource type="Script" path="res://scenes/suckphysic.gd" id="2_uvywf"]
+[ext_resource type="Script" path="res://scenes/suckring.gd" id="3_ycd8m"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_23r7k"]
 
@@ -15,6 +19,117 @@ height = 5.738
 
 [sub_resource type="BoxMesh" id="BoxMesh_ubc4g"]
 size = Vector3(0.1, 0.2, 1)
+
+[sub_resource type="Curve" id="Curve_l25rq"]
+max_value = 30.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 6.54546), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_frx6n"]
+curve = SubResource("Curve_l25rq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_a11ag"]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.0
+emission_ring_radius = 0.8
+emission_ring_inner_radius = 0.5
+particle_flag_align_y = true
+direction = Vector3(1, 0, 1)
+spread = 180.0
+flatness = 1.0
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -8.88
+radial_accel_max = -8.88
+damping_curve = SubResource("CurveTexture_frx6n")
+scale_min = 0.25
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n0j62"]
+transparency = 1
+albedo_color = Color(0.819608, 0.823529, 0.811765, 1)
+billboard_keep_scale = true
+use_particle_trails = true
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_mcdvi"]
+material = SubResource("StandardMaterial3D_n0j62")
+size = 0.05
+sections = 2
+section_segments = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rgl5o"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.686275, 0.686275, 0.686275, 1)
+albedo_texture = ExtResource("2_ge2og")
+albedo_texture_msdf = true
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+use_particle_trails = true
+proximity_fade_enabled = true
+
+[sub_resource type="Gradient" id="Gradient_xdfdy"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6kiq1"]
+gradient = SubResource("Gradient_xdfdy")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wvptk"]
+lifetime_randomness = 0.5
+emission_shape = 6
+emission_ring_axis = Vector3(1, 0, 0)
+emission_ring_height = 0.253
+emission_ring_radius = 0.444
+emission_ring_inner_radius = 0.929
+particle_flag_align_y = true
+direction = Vector3(0, 1, 0)
+spread = 180.0
+flatness = 1.0
+gravity = Vector3(0, 1, 0)
+angular_velocity_min = 717.29
+angular_velocity_max = 720.0
+radial_accel_min = -100.0
+radial_accel_max = -100.0
+tangential_accel_min = -104.14
+tangential_accel_max = -100.0
+angle_min = -720.0
+angle_max = 720.0
+scale_min = 0.0
+scale_max = 0.0
+color = Color(1, 1, 1, 0)
+color_ramp = SubResource("GradientTexture1D_6kiq1")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+turbulence_enabled = true
+turbulence_noise_strength = 0.0
+turbulence_noise_scale = 10.0
+turbulence_noise_speed = Vector3(0.2, 0.2, 0.2)
+turbulence_influence_min = 0.02
+turbulence_influence_max = 0.04
+turbulence_initial_displacement_max = 1.0
+attractor_interaction_enabled = false
+collision_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sey3y"]
+transparency = 1
+shading_mode = 0
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+use_particle_trails = true
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_42yas"]
+material = SubResource("StandardMaterial3D_sey3y")
+shape = 0
+size = 0.2
+sections = 2
+section_length = 0.1
+section_segments = 1
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_gngof")
@@ -53,13 +168,64 @@ transform = Transform3D(1, 0, -1.5246e-23, -1.5246e-23, -4.37114e-08, -1, 0, 1, 
 shape = SubResource("CapsuleShape3D_m84eq")
 
 [node name="RightArm" type="MeshInstance3D" parent="Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.513504, -0.527357, -0.54907)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.561032, -0.527357, -0.54907)
 mesh = SubResource("BoxMesh_ubc4g")
 skeleton = NodePath("../..")
+
+[node name="GPUParticlesAttractorVectorField3D2" type="GPUParticlesAttractorVectorField3D" parent="Camera3D/RightArm"]
+transform = Transform3D(0.993486, -0.00176658, 0.113938, 0.000447967, 0.999933, 0.0115975, -0.113951, -0.011471, 0.99342, 0.0810058, 0.229823, -0.637517)
+rotation_edit_mode = 1
+strength = 0.0
+attenuation = 0.0974196
+directionality = 1.0
+size = Vector3(3.34354, 1.96893, 5.47376)
+script = ExtResource("2_uvywf")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Camera3D/RightArm/GPUParticlesAttractorVectorField3D2"]
+transform = Transform3D(-0.0506821, -0.0899561, -0.994656, -0.998614, -0.00960947, 0.0517528, -0.0142137, 0.9959, -0.0893443, -0.153388, -0.205317, -2.10834)
+emitting = false
+amount = 100
+lifetime = 0.4
+visibility_aabb = AABB(-4, -5.34156, -4, 8, 10.6831, 8)
+trail_enabled = true
+trail_lifetime = 0.2
+process_material = SubResource("ParticleProcessMaterial_a11ag")
+draw_pass_1 = SubResource("RibbonTrailMesh_mcdvi")
+script = ExtResource("3_ycd8m")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Camera3D/RightArm/GPUParticlesAttractorVectorField3D2/GPUParticles3D"]
+transform = Transform3D(0.00252073, -0.999659, 0.0260112, 0.997237, 0.000581642, -0.0742879, 0.0742474, 0.0261265, 0.996898, -0.0178537, 0.0261409, 0.00152916)
+material_override = SubResource("StandardMaterial3D_rgl5o")
+amount = 1000
+lifetime = 0.22
+randomness = 1.0
+fixed_fps = 60
+visibility_aabb = AABB(-4, -4.19531, -4, 8, 8, 8)
+trail_enabled = true
+trail_lifetime = 0.2
+process_material = SubResource("ParticleProcessMaterial_wvptk")
+draw_pass_1 = SubResource("RibbonTrailMesh_42yas")
+script = ExtResource("3_ycd8m")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Camera3D"]
+size = Vector3(1.97036, 1.91746, 1.57917)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 light_size = 1.0
 omni_range = 4096.0
+
+[node name="TextureRect" type="TextureRect" parent="OmniLight3D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 771.0
+offset_bottom = 434.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.599, 0.599)
+mouse_filter = 2
+texture = ExtResource("2_ijn1w")
+expand_mode = 1
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 20
