@@ -1,6 +1,15 @@
+GPUParticlesCollisionSphere3D
+GPUParticles3D
+GPUParticlesCollisionBox3D
+GPUParticlesAttractorSphere3D
+CPUParticles3D
+GPUParticlesAttractorVectorField3D
+TextureRect
+StaticBody3D
+Marker3D
+GPUParticlesCollisionHeightField3D
 MeshInstance3D
 CollisionShape3D
 Area3D
-StaticBody3D
 RayCast3D
 ImporterMeshInstance3D
