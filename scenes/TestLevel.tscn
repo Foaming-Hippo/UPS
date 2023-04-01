@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ived765i2gat"]
+[gd_scene load_steps=16 format=3 uid="uid://ived765i2gat"]
 
 [ext_resource type="PackedScene" uid="uid://roo6uger2qf8" path="res://scenes/player.tscn" id="1_od6uf"]
 [ext_resource type="PackedScene" uid="uid://dqr8xwov6x77f" path="res://scenes/door.tscn" id="2_6ie3r"]
@@ -14,6 +14,9 @@ size = Vector3(10, 1, 40)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3lq17"]
 size = Vector3(10, 1, 40)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_csu3q"]
+proximity_fade_enabled = true
 
 [sub_resource type="Curve" id="Curve_efifb"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.0545454), 0.0, 0.0, 0, 0]
@@ -96,10 +99,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0966573, 2.38107, 28.314)
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.85358, 1.37182, 11.8891)
 rotation_edit_mode = 1
-amount = 25
-lifetime = 22.69
+material_override = SubResource("StandardMaterial3D_csu3q")
+lifetime = 1.12
 randomness = 1.0
 visibility_aabb = AABB(-61.1883, -72.0545, -120.142, 122.377, 144.109, 240.284)
+trail_enabled = true
 process_material = SubResource("ParticleProcessMaterial_5arbd")
 draw_pass_1 = ExtResource("8_r6hqh")
 draw_skin = SubResource("Skin_ojwof")
