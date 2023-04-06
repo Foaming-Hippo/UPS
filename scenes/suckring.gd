@@ -1,4 +1,4 @@
-extends GPUParticles3D
+extends CPUParticles3D
 
 func _ready():
 	set_process_input(true)
