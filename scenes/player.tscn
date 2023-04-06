@@ -197,6 +197,7 @@ omni_range = 4096.0
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 unique_name_in_owner = true
+metadata/sucking = false
 
 [node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
 unique_name_in_owner = true
