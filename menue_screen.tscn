@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfg5tv34ymiam"]
+
+[ext_resource type="Texture2D" uid="uid://duej8mc7ju84a" path="res://models/gal.png" id="1_dhn81"]
+[ext_resource type="FontFile" uid="uid://c8t70bubexj2d" path="res://models/Potra.ttf" id="2_y7uc3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d3jnx"]
+line_spacing = -0.071
+font = ExtResource("2_y7uc3")
+font_size = 60
+outline_size = 2
+outline_color = Color(0, 1, 1, 1)
+shadow_size = 63
+shadow_color = Color(0, 0, 0, 0.258824)
+shadow_offset = Vector2(1, 50)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 962.0
+offset_bottom = 642.0
+scale = Vector2(0.545, 0.545)
+texture = ExtResource("1_dhn81")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 414.0
+offset_bottom = 648.0
+color = Color(0.0588235, 0.0588235, 0.0588235, 0.85098)
+
+[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
+layout_mode = 0
+offset_right = 414.0
+offset_bottom = 648.0
+
+[node name="PanelContainer" type="PanelContainer" parent="ColorRect/CenterContainer"]
+custom_minimum_size = Vector2(414, 648)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect/CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Universal Package Stealers"
+label_settings = SubResource("LabelSettings_d3jnx")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Start Game"

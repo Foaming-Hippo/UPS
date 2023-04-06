@@ -23,6 +23,9 @@ func _ready():
 	get_node("UI/player_info").set_health(get_meta("Health"))
 
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		$PauseMenu.pause()
 
 func _physics_process(delta):
 	# Add the gravity.

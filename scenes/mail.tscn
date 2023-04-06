@@ -59,7 +59,7 @@ collision_mask = 8
 script = ExtResource("2_lruej")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(2.25839, 0, 0, 0, 0.27118, 0, 0, 0, 2.9991, 0, 0, 0)
+transform = Transform3D(1.258, 0, 0, 0, 0.171, 0, 0, 0, 1.993, 0, 0.0822398, 0)
 shape = SubResource("ConvexPolygonShape3D_bdp2g")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

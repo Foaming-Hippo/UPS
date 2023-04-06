@@ -1,15 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dofg74crgik1u"]
+[gd_scene load_steps=4 format=3 uid="uid://dofg74crgik1u"]
 
 [ext_resource type="Script" path="res://scripts/door_key.gd" id="1_2ssj2"]
+[ext_resource type="PackedScene" uid="uid://b8j8rmn3mwhwm" path="res://models/key.glb" id="2_putil"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w4bry"]
-size = Vector3(0.5, 0.5, 0.5)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82pu8"]
-albedo_color = Color(0.129412, 1, 1, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_ly7ga"]
-material = SubResource("StandardMaterial3D_82pu8")
 size = Vector3(0.5, 0.5, 0.5)
 
 [node name="DoorKey" type="StaticBody3D"]
@@ -23,5 +17,5 @@ script = ExtResource("1_2ssj2")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_w4bry")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_ly7ga")
+[node name="key" parent="." instance=ExtResource("2_putil")]
+transform = Transform3D(2.25947e-16, 4.37114e-09, 0.1, 0.1, -4.37114e-09, -3.48787e-17, 4.37114e-09, 0.1, -4.37114e-09, -0.0393938, 0, -0.0118071)

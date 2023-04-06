@@ -793,3 +793,5 @@ shape = SubResource("ConvexPolygonShape3D_x6yjf")
 libraries = {
 "": SubResource("AnimationLibrary_6jbep")
 }
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

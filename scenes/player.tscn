@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://roo6uger2qf8"]
+[gd_scene load_steps=19 format=3 uid="uid://roo6uger2qf8"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_gngof"]
 [ext_resource type="PackedScene" uid="uid://bywr72ybgssck" path="res://scenes/ui.tscn" id="2_4yqj4"]
 [ext_resource type="Texture2D" uid="uid://cuiqntwidn1bn" path="res://models/R (5).png" id="2_ge2og"]
 [ext_resource type="Script" path="res://scenes/suckphysic.gd" id="2_uvywf"]
 [ext_resource type="Script" path="res://scenes/suckring.gd" id="3_ycd8m"]
+[ext_resource type="PackedScene" path="res://pause_menu.tscn" id="6_vgsqv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_23r7k"]
 
@@ -77,6 +78,7 @@ metadata/keys = []
 metadata/money = 0
 metadata/Health = 100
 metadata/MoneyMoney = false
+metadata/sucking = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_23r7k")
@@ -200,4 +202,7 @@ unique_name_in_owner = true
 metadata/sucking = false
 
 [node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+
+[node name="PauseMenu" parent="." instance=ExtResource("6_vgsqv")]
 unique_name_in_owner = true
