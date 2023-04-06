@@ -1,0 +1,44 @@
+[gd_resource type="ParticleProcessMaterial" load_steps=3 format=3 uid="uid://cwi0rst7a0eql"]
+
+[sub_resource type="Gradient" id="Gradient_xdfdy"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6kiq1"]
+gradient = SubResource("Gradient_xdfdy")
+
+[resource]
+lifetime_randomness = 0.5
+emission_shape = 6
+emission_ring_axis = Vector3(1, 0, 0)
+emission_ring_height = 0.253
+emission_ring_radius = 0.444
+emission_ring_inner_radius = 0.929
+particle_flag_align_y = true
+direction = Vector3(0, 1, 0)
+spread = 180.0
+flatness = 1.0
+gravity = Vector3(0, 1, 0)
+angular_velocity_min = 717.29
+angular_velocity_max = 720.0
+radial_accel_min = -100.0
+radial_accel_max = -100.0
+tangential_accel_min = -104.14
+tangential_accel_max = -100.0
+angle_min = -720.0
+angle_max = 720.0
+scale_min = 0.0
+scale_max = 0.0
+color = Color(1, 1, 1, 0)
+color_ramp = SubResource("GradientTexture1D_6kiq1")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+turbulence_enabled = true
+turbulence_noise_strength = 0.0
+turbulence_noise_scale = 10.0
+turbulence_noise_speed = Vector3(0.2, 0.2, 0.2)
+turbulence_influence_min = 0.02
+turbulence_influence_max = 0.04
+turbulence_initial_displacement_max = 1.0
+attractor_interaction_enabled = false
+collision_mode = 2

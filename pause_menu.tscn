@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://1r2nuh8ys2bw"]
+[gd_scene load_steps=12 format=3 uid="uid://1r2nuh8ys2bw"]
 
 [ext_resource type="Shader" path="res://blur.gdshader" id="1_o08cb"]
 [ext_resource type="Script" path="res://pause_menu.gd" id="2_g3oeq"]
+[ext_resource type="Texture2D" uid="uid://cnidhxv31hjrd" path="res://models/map1.png" id="3_86j2d"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r3hya"]
 shader = ExtResource("1_o08cb")
@@ -229,10 +230,22 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "Restart"
 
+[node name="NewButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "new level"
+
 [node name="QuitButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Quit"
+
+[node name="Map1" type="Sprite2D" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+position = Vector2(1025, 6.10352e-05)
+scale = Vector2(0.201299, 0.201299)
+texture = ExtResource("3_86j2d")
+centered = false
+flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Unpause"

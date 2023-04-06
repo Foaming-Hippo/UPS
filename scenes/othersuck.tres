@@ -1,0 +1,18 @@
+[gd_resource type="RibbonTrailMesh" load_steps=2 format=3 uid="uid://cp0ef2u4irv87"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sey3y"]
+transparency = 1
+shading_mode = 0
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+use_particle_trails = true
+
+[resource]
+material = SubResource("StandardMaterial3D_sey3y")
+shape = 0
+size = 0.2
+sections = 2
+section_length = 0.1
+section_segments = 1

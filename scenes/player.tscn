@@ -1,11 +1,16 @@
-[gd_scene load_steps=19 format=3 uid="uid://roo6uger2qf8"]
+[gd_scene load_steps=18 format=3 uid="uid://roo6uger2qf8"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_gngof"]
 [ext_resource type="PackedScene" uid="uid://bywr72ybgssck" path="res://scenes/ui.tscn" id="2_4yqj4"]
 [ext_resource type="Texture2D" uid="uid://cuiqntwidn1bn" path="res://models/R (5).png" id="2_ge2og"]
 [ext_resource type="Script" path="res://scenes/suckphysic.gd" id="2_uvywf"]
+[ext_resource type="Material" uid="uid://df0qx3oix31iy" path="res://scenes/suck2.tres" id="3_8xwed"]
 [ext_resource type="Script" path="res://scenes/suckring.gd" id="3_ycd8m"]
-[ext_resource type="PackedScene" path="res://pause_menu.tscn" id="6_vgsqv"]
+[ext_resource type="RibbonTrailMesh" uid="uid://cq08fw8asvt43" path="res://scenes/suckersuck.tres" id="4_kpb85"]
+[ext_resource type="Material" uid="uid://cwi0rst7a0eql" path="res://scenes/SUCK.tres" id="5_ahkf2"]
+[ext_resource type="RibbonTrailMesh" uid="uid://cp0ef2u4irv87" path="res://scenes/othersuck.tres" id="6_lskto"]
+[ext_resource type="PackedScene" uid="uid://1r2nuh8ys2bw" path="res://pause_menu.tscn" id="6_vgsqv"]
+[ext_resource type="Texture2D" uid="uid://dkb112s3i7qka" path="res://models/arm.png" id="11_i7nsx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_23r7k"]
 
@@ -20,23 +25,6 @@ height = 5.738
 [sub_resource type="BoxMesh" id="BoxMesh_ubc4g"]
 size = Vector3(0.1, 0.2, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n0j62"]
-transparency = 1
-albedo_color = Color(0.819608, 0.823529, 0.811765, 1)
-billboard_keep_scale = true
-use_particle_trails = true
-
-[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_mcdvi"]
-material = SubResource("StandardMaterial3D_n0j62")
-size = 0.05
-sections = 2
-section_segments = 2
-
-[sub_resource type="Curve" id="Curve_l25rq"]
-max_value = 30.0
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 6.54546), 0.0, 0.0, 0, 0]
-point_count = 2
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rgl5o"]
 transparency = 1
 shading_mode = 0
@@ -49,27 +37,6 @@ particles_anim_v_frames = 1
 particles_anim_loop = false
 use_particle_trails = true
 proximity_fade_enabled = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sey3y"]
-transparency = 1
-shading_mode = 0
-billboard_mode = 3
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
-use_particle_trails = true
-
-[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_42yas"]
-material = SubResource("StandardMaterial3D_sey3y")
-shape = 0
-size = 0.2
-sections = 2
-section_length = 0.1
-section_segments = 1
-
-[sub_resource type="Gradient" id="Gradient_xdfdy"]
-offsets = PackedFloat32Array(0, 0.5, 1)
-colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_gngof")
@@ -114,7 +81,7 @@ mesh = SubResource("BoxMesh_ubc4g")
 skeleton = NodePath("../..")
 
 [node name="GPUParticlesAttractorVectorField3D2" type="GPUParticlesAttractorVectorField3D" parent="Camera3D/RightArm"]
-transform = Transform3D(0.993486, -0.00176658, 0.113938, 0.000447967, 0.999933, 0.0115975, -0.113951, -0.011471, 0.99342, 0.0810058, 0.229823, -0.637517)
+transform = Transform3D(0.993486, -0.00176658, 0.113938, 0.000447967, 0.999933, 0.0115975, -0.113951, -0.011471, 0.99342, 0.0810058, 0.229823, -0.598304)
 rotation_edit_mode = 1
 strength = 0.0
 attenuation = 0.0974196
@@ -122,64 +89,31 @@ directionality = 1.0
 size = Vector3(3.34354, 1.96893, 5.47376)
 script = ExtResource("2_uvywf")
 
-[node name="GPUParticles3D" type="CPUParticles3D" parent="Camera3D/RightArm/GPUParticlesAttractorVectorField3D2"]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Camera3D/RightArm/GPUParticlesAttractorVectorField3D2"]
 transform = Transform3D(-0.0506821, -0.0899561, -0.994656, -0.998614, -0.00960947, 0.0517528, -0.0142137, 0.9959, -0.0893443, -0.153388, -0.205317, -2.10834)
 emitting = false
 amount = 100
 lifetime = 0.4
-fixed_fps = 30
-mesh = SubResource("RibbonTrailMesh_mcdvi")
-emission_shape = 6
-emission_ring_axis = Vector3(0, 0, 1)
-emission_ring_height = 1.0
-emission_ring_radius = 1.0
-emission_ring_inner_radius = 0.0
-particle_flag_align_y = true
-direction = Vector3(1, 0, 1)
-spread = 180.0
-flatness = 1.0
-gravity = Vector3(0, 0, 0)
-radial_accel_min = -8.88
-radial_accel_max = -8.88
-damping_curve = SubResource("Curve_l25rq")
-scale_amount_min = 0.25
-hue_variation_min = -1.0
-hue_variation_max = 1.0
+trail_enabled = true
+trail_lifetime = 0.2
+process_material = ExtResource("3_8xwed")
+draw_pass_1 = ExtResource("4_kpb85")
 script = ExtResource("3_ycd8m")
 
-[node name="GPUParticles3D" type="CPUParticles3D" parent="Camera3D/RightArm/GPUParticlesAttractorVectorField3D2/GPUParticles3D"]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Camera3D/RightArm/GPUParticlesAttractorVectorField3D2/GPUParticles3D"]
 transform = Transform3D(0.00252073, -0.999659, 0.0260112, 0.997237, 0.000581642, -0.0742879, 0.0742474, 0.0261265, 0.996898, -0.0178537, 0.0261409, 0.00152916)
 material_override = SubResource("StandardMaterial3D_rgl5o")
+emitting = false
 amount = 1000
 lifetime = 0.22
 randomness = 1.0
-lifetime_randomness = 0.5
 fixed_fps = 60
-mesh = SubResource("RibbonTrailMesh_42yas")
-emission_shape = 6
-emission_ring_axis = Vector3(0, 0, 1)
-emission_ring_height = 1.0
-emission_ring_radius = 1.0
-emission_ring_inner_radius = 0.0
-particle_flag_align_y = true
-direction = Vector3(0, 1, 0)
-spread = 180.0
-flatness = 1.0
-gravity = Vector3(0, 1, 0)
-angular_velocity_min = 717.29
-angular_velocity_max = 720.0
-radial_accel_min = -100.0
-radial_accel_max = -100.0
-tangential_accel_min = -104.14
-tangential_accel_max = -100.0
-angle_min = -720.0
-angle_max = 720.0
-scale_amount_min = 0.0
-scale_amount_max = 0.0
-color = Color(1, 1, 1, 0)
-color_ramp = SubResource("Gradient_xdfdy")
-hue_variation_min = -1.0
-hue_variation_max = 1.0
+visibility_aabb = AABB(-4, -4.1, -4, 8, 8, 8)
+local_coords = true
+trail_enabled = true
+trail_lifetime = 0.2
+process_material = ExtResource("5_ahkf2")
+draw_pass_1 = ExtResource("6_lskto")
 script = ExtResource("3_ycd8m")
 
 [node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Camera3D"]
@@ -206,3 +140,15 @@ unique_name_in_owner = true
 
 [node name="PauseMenu" parent="." instance=ExtResource("6_vgsqv")]
 unique_name_in_owner = true
+top_level = true
+
+[node name="Arm" type="Sprite2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(1152, 648)
+rotation = -3.14159
+scale = Vector2(0.599219, 0.599074)
+texture = ExtResource("11_i7nsx")
+centered = false
+flip_h = true
+flip_v = true

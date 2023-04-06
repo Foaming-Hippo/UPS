@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ived765i2gat"]
+[gd_scene load_steps=16 format=3 uid="uid://ived765i2gat"]
 
 [ext_resource type="PackedScene" uid="uid://roo6uger2qf8" path="res://scenes/player.tscn" id="1_od6uf"]
 [ext_resource type="PackedScene" uid="uid://dqr8xwov6x77f" path="res://scenes/door.tscn" id="2_6ie3r"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dvt3l62ephgmo" path="res://money_platform.tscn" id="6_d1254"]
 [ext_resource type="PackedScene" uid="uid://c4b480nmio07b" path="res://Cop.tscn" id="7_2wuaa"]
 [ext_resource type="ArrayMesh" uid="uid://daqyfyi17dp2p" path="res://models/mail.obj" id="8_r6hqh"]
+[ext_resource type="Texture2D" uid="uid://dognwbf8r81wy" path="res://models/sky.tres" id="10_nkfg2"]
+[ext_resource type="PackedScene" uid="uid://d0pp5dp7vb2w6" path="res://models/ur_anus.glb" id="11_nw02k"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0uj8w"]
 size = Vector3(10, 1, 40)
@@ -18,6 +20,12 @@ size = Vector3(10, 1, 40)
 [sub_resource type="Curve" id="Curve_efifb"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.0545454), 0.0, 0.0, 0, 0]
 point_count = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ogvrr"]
+albedo_texture = ExtResource("10_nkfg2")
+
+[sub_resource type="SphereMesh" id="SphereMesh_5j5cs"]
+flip_faces = true
 
 [node name="Test" type="Node3D"]
 
@@ -97,3 +105,21 @@ scale_amount_curve = SubResource("Curve_efifb")
 [node name="GPUParticlesCollisionHeightField3D" type="GPUParticlesCollisionHeightField3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15.2796)
 size = Vector3(60.5789, 51.5727, 148.197)
+
+[node name="ur_anus" parent="." instance=ExtResource("11_nw02k")]
+transform = Transform3D(167, -110.05, 0, 110.05, 167, 0, 0, 0, 200, 1211.81, -232.368, -14)
+
+[node name="skybox" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.76167, -0.644769, 57.8791)
+top_level = true
+
+[node name="Sphere" type="MeshInstance3D" parent="skybox"]
+transform = Transform3D(-955.691, 0, 0, 0, -955.691, 0, 0, 0, -955.691, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ogvrr")
+cast_shadow = 2
+lod_bias = 0.001
+visibility_range_end = 4096.0
+visibility_range_end_margin = 4096.0
+visibility_range_fade_mode = 2
+mesh = SubResource("SphereMesh_5j5cs")
+skeleton = NodePath("")

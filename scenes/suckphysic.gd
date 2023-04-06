@@ -15,9 +15,9 @@ func _input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.pressed:
 			player.set_meta("sucking", true)
-			strength = attractor_strength
 			sound1.stream = load("res://models/sounds/slurp2.tres")
 			sound1.play()
+			strength = attractor_strength
 		else:
 			player.set_meta("sucking", false)
 			sound1.stop()

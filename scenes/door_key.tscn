@@ -1,10 +1,96 @@
-[gd_scene load_steps=4 format=3 uid="uid://dofg74crgik1u"]
+[gd_scene load_steps=7 format=3 uid="uid://dofg74crgik1u"]
 
 [ext_resource type="Script" path="res://scripts/door_key.gd" id="1_2ssj2"]
 [ext_resource type="PackedScene" uid="uid://b8j8rmn3mwhwm" path="res://models/key.glb" id="2_putil"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w4bry"]
 size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="Animation" id="Animation_h736a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("key:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(4.37114e-08, 1.5708, 1.33227e-14)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("key:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.0393938, 0, -0.0118071)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("key:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.1, 0.1, 0.1)]
+}
+
+[sub_resource type="Animation" id="Animation_njsai"]
+resource_name = "spin"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("key:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5708, 0), Vector3(0, 3.14159, 0), Vector3(0, 4.71239, 0), Vector3(0, 6.28319, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("key:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.0393938, 0, -0.0118071), Vector3(-0.039, 0.1, -0.012), Vector3(-0.0393938, -0.000380456, -0.0118071), Vector3(-0.039, -0.1, -0.012), Vector3(-0.039, 0, -0.012)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("key:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.1, 0.1, 0.1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qnud7"]
+_data = {
+"RESET": SubResource("Animation_h736a"),
+"spin": SubResource("Animation_njsai")
+}
 
 [node name="DoorKey" type="StaticBody3D"]
 metadata/color = ""
@@ -18,4 +104,10 @@ script = ExtResource("1_2ssj2")
 shape = SubResource("BoxShape3D_w4bry")
 
 [node name="key" parent="." instance=ExtResource("2_putil")]
-transform = Transform3D(2.25947e-16, 4.37114e-09, 0.1, 0.1, -4.37114e-09, -3.48787e-17, 4.37114e-09, 0.1, -4.37114e-09, -0.0393938, 0, -0.0118071)
+transform = Transform3D(-3.61999e-07, 4.37114e-09, 0.1, 1.33227e-15, 0.1, -4.37114e-09, -0.1, -1.44912e-14, -3.61999e-07, -0.0393938, 0, -0.0118071)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "spin"
+libraries = {
+"": SubResource("AnimationLibrary_qnud7")
+}

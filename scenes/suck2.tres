@@ -1,0 +1,27 @@
+[gd_resource type="ParticleProcessMaterial" load_steps=3 format=3 uid="uid://df0qx3oix31iy"]
+
+[sub_resource type="Curve" id="Curve_l25rq"]
+max_value = 30.0
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 6.54546), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_frx6n"]
+curve = SubResource("Curve_l25rq")
+
+[resource]
+emission_shape = 6
+emission_ring_axis = Vector3(0, 1, 0)
+emission_ring_height = 0.0
+emission_ring_radius = 0.8
+emission_ring_inner_radius = 0.5
+particle_flag_align_y = true
+direction = Vector3(1, 0, 1)
+spread = 180.0
+flatness = 1.0
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -8.88
+radial_accel_max = -8.88
+damping_curve = SubResource("CurveTexture_frx6n")
+scale_min = 0.25
+hue_variation_min = -1.0
+hue_variation_max = 1.0
