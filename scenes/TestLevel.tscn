@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dofg74crgik1u" path="res://scenes/door_key.tscn" id="4_d48fa"]
 [ext_resource type="PackedScene" uid="uid://bqpc467iyfh35" path="res://health.tscn" id="5_u7arj"]
 [ext_resource type="PackedScene" uid="uid://dvt3l62ephgmo" path="res://money_platform.tscn" id="6_d1254"]
-[ext_resource type="PackedScene" uid="uid://c4b480nmio07b" path="res://Cop.tscn" id="7_2wuaa"]
 [ext_resource type="ArrayMesh" uid="uid://daqyfyi17dp2p" path="res://models/mail.obj" id="8_r6hqh"]
+[ext_resource type="PackedScene" uid="uid://cdnhkp4v1eakb" path="res://AI.tscn" id="10_6w78t"]
 [ext_resource type="Texture2D" uid="uid://dognwbf8r81wy" path="res://models/sky.tres" id="10_nkfg2"]
 [ext_resource type="PackedScene" uid="uid://d0pp5dp7vb2w6" path="res://models/ur_anus.glb" id="11_nw02k"]
 
@@ -81,9 +81,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.89764, 1.74791, 9.14338)
 [node name="money plate" parent="." instance=ExtResource("6_d1254")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.50147, 0.500479, 5.51526)
 
-[node name="cop" parent="." instance=ExtResource("7_2wuaa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0966573, 2.38107, 28.314)
-
 [node name="GPUParticles3D" type="CPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.85358, 1.37182, 11.8891)
 rotation_edit_mode = 1
@@ -123,3 +120,6 @@ visibility_range_end_margin = 4096.0
 visibility_range_fade_mode = 2
 mesh = SubResource("SphereMesh_5j5cs")
 skeleton = NodePath("")
+
+[node name="CharacterBody3D2" parent="." instance=ExtResource("10_6w78t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.18119, 30.1745)

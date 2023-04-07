@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b8j8rmn3mwhwm" path="res://models/key.glb" id="2_putil"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_w4bry"]
-size = Vector3(0.5, 0.5, 0.5)
+size = Vector3(0.1, 0.1, 0.1)
 
 [sub_resource type="Animation" id="Animation_h736a"]
 length = 0.001
@@ -96,8 +96,8 @@ _data = {
 metadata/color = ""
 
 [node name="Area3D" type="Area3D" parent="."]
-collision_layer = 4
-collision_mask = 4
+collision_layer = 12
+collision_mask = 12
 script = ExtResource("1_2ssj2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]

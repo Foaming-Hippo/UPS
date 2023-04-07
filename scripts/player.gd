@@ -15,12 +15,13 @@ var pitch = 0
 var rotation_vect
 var moving = false
 var sprinting = false
+var pew
 
 
 func _ready():
+	pew = get_node("Camera3D/RayCast3D")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	set_meta("Health", 90)
-	get_node("UI/player_info").set_health(get_meta("Health"))
+	get_node("UI/player_info").add_health(100)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -35,6 +36,9 @@ func _physics_process(delta):
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+	
+	if Input.is_action_just_pressed("pewpew"):
+		print(pew.get_collider())
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

@@ -3,6 +3,8 @@ extends Area3D
 var overlap
 var keys
 var player
+var sound
+var move
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,19 +16,23 @@ func _ready():
 func _process(_delta):
 	overlap = get_overlapping_areas()
 	
-	# Player walks within key pickup range
-	if overlap.size() > 0:
-		# Get the node of the player
-		player = overlap[0].get_parent()
+	if get_overlapping_areas().size() > 0:
+		player = get_overlapping_areas()[0].get_parent().get_parent()
+		move = player.global_position
 		
-		# Get the player's key array
-		keys = player.get_meta("keys")
-		# Add the key
-		keys.push_back(get_parent().get_meta("color"))
-		# Give the player the new key array
-		player.set_meta("keys", keys)
-		
-		player.get_node("UI/player_info").add_key(get_parent().get_meta("color"))
-		
-		# Destroy the key object
-		get_parent().queue_free()
+		if player.get_meta("sucking") == true:
+			get_parent().move_and_collide((move - get_parent().global_position) * _delta * 3)
+			
+			# Check if interacting with the player
+			if get_overlapping_areas().size() > 1 and get_overlapping_areas()[1].get_parent() is CharacterBody3D:
+				
+				# Get the player's key array
+				keys = player.get_meta("keys")
+				# Add the key
+				keys.push_back(get_parent().get_meta("color"))
+				# Give the player the new key array
+				player.set_meta("keys", keys)
+				# Set player meta
+				player.get_node("UI/player_info").add_key(get_parent().get_meta("color"))
+				
+				get_parent().queue_free()

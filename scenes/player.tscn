@@ -119,6 +119,9 @@ script = ExtResource("3_ycd8m")
 [node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Camera3D"]
 size = Vector3(1.97036, 1.91746, 1.57917)
 
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+transform = Transform3D(1, -1.99927e-29, 2.91302e-38, 0, -1.31134e-06, -1, 6.66422e-31, 30, -4.37114e-08, -0.0183264, -0.0667701, -0.587758)
+
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 20
 collision_mask = 20

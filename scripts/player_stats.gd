@@ -10,6 +10,7 @@ func _ready():
 	money = 0
 	keys = []
 	mail = 0
+	health = 0
 	print_label()
 	pass # Replace with function body.
 
@@ -25,8 +26,8 @@ func add_key(key):
 func add_mail(amt):
 	mail += amt
 
-func set_health(val):
-	health = val
+func add_health(val):
+	health += val
 	if health > 100:
 		health = 100
 		

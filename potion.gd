@@ -14,6 +14,6 @@ func _process(delta):
 		var player = overlap[0].get_parent()
 		var health = player.get_meta("Health")
 		
-		player.get_node("UI/player_info").set_health(health + 20)
+		player.get_node("UI/player_info").add_health(50)
 		
 		get_parent().queue_free()
