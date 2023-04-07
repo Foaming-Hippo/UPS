@@ -2210,7 +2210,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_f8i42")
 
 [node name="Plane001" type="BoneAttachment3D" parent="doors/door4/Door_rig/Skeleton3D"]
-transform = Transform3D(-1.66557e-07, 0.714562, 8.14584e-15, -1.10306, -1.07896e-07, -2.36899e-20, -3.38813e-20, -8.14583e-15, 0.714562, 4.44089e-13, 0, -2.49821e-14)
+transform = Transform3D(-1.66557e-07, 0.714562, 8.14583e-15, -1.10306, -1.07896e-07, -2.37169e-20, -3.38813e-20, -8.14583e-15, 0.714562, 4.44089e-13, 0, -2.49821e-14)
 bone_name = "Plane.001"
 bone_idx = 3
 
@@ -2220,7 +2220,7 @@ mesh = SubResource("ArrayMesh_awb6k")
 skeleton = NodePath("")
 
 [node name="Cube" type="BoneAttachment3D" parent="doors/door4/Door_rig/Skeleton3D"]
-transform = Transform3D(0.15154, -1.59263e-15, 5.2406e-15, 0, 0.15154, 0, 5.24059e-15, 4.44089e-15, 0.15154, -9.03252e-08, 1.08896, -0.685929)
+transform = Transform3D(0.15154, 0, 5.24059e-15, 0, 0.15154, 0, 5.24059e-15, 0, 0.15154, -9.03252e-08, 1.08896, -0.685929)
 bone_name = "Cube"
 bone_idx = 5
 
@@ -2230,7 +2230,7 @@ mesh = SubResource("ArrayMesh_1oi83")
 skeleton = NodePath("")
 
 [node name="Cube002" type="BoneAttachment3D" parent="doors/door4/Door_rig/Skeleton3D"]
-transform = Transform3D(0.15154, 1.76282e-09, -5.37432e-09, 2.84848e-09, 0.15154, -6.04875e-10, -5.37432e-09, -6.04857e-10, 0.15154, -7.33141e-08, 1.08896, 0.68593)
+transform = Transform3D(0.15154, -3.72529e-09, 2.87882e-09, -3.72529e-09, 0.15154, 3.24007e-10, 2.87883e-09, 3.23993e-10, 0.15154, -7.45245e-08, 1.08896, 0.68593)
 bone_name = "Cube.002"
 bone_idx = 7
 
@@ -2239,7 +2239,7 @@ mesh = SubResource("ArrayMesh_hvlf5")
 skeleton = NodePath("")
 
 [node name="Plane" type="BoneAttachment3D" parent="doors/door4/Door_rig/Skeleton3D"]
-transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 5.60993e-14, 0, -0.151457)
+transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 5.71256e-14, 0, -0.151457)
 bone_name = "Plane"
 bone_idx = 9
 
@@ -2258,7 +2258,7 @@ mesh = SubResource("ArrayMesh_uhuql")
 skeleton = NodePath("")
 
 [node name="Plane002" type="BoneAttachment3D" parent="doors/door4/Door_rig/Skeleton3D"]
-transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 2.19973e-13, 0, 0)
+transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 2.27545e-13, 0, 0)
 bone_name = "Plane.002"
 bone_idx = 13
 
@@ -2469,7 +2469,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_f8i42")
 
 [node name="Plane001" type="BoneAttachment3D" parent="doors/door5/Door_rig/Skeleton3D"]
-transform = Transform3D(-1.66557e-07, 0.714562, 8.14584e-15, -1.10306, -1.07896e-07, -2.36899e-20, -3.38813e-20, -8.14583e-15, 0.714562, 4.44089e-13, 0, -2.49821e-14)
+transform = Transform3D(-1.66557e-07, 0.714562, 8.14583e-15, -1.10306, -1.07896e-07, -2.37169e-20, -3.38813e-20, -8.14583e-15, 0.714562, 4.44089e-13, 0, -2.49821e-14)
 bone_name = "Plane.001"
 bone_idx = 3
 
@@ -2479,7 +2479,7 @@ mesh = SubResource("ArrayMesh_awb6k")
 skeleton = NodePath("")
 
 [node name="Cube" type="BoneAttachment3D" parent="doors/door5/Door_rig/Skeleton3D"]
-transform = Transform3D(0.15154, -1.59263e-15, 5.2406e-15, 0, 0.15154, 0, 5.24059e-15, 4.44089e-15, 0.15154, -9.03252e-08, 1.08896, -0.685929)
+transform = Transform3D(0.15154, 0, 5.24059e-15, 0, 0.15154, 0, 5.24059e-15, 0, 0.15154, -9.03252e-08, 1.08896, -0.685929)
 bone_name = "Cube"
 bone_idx = 5
 
@@ -2489,7 +2489,7 @@ mesh = SubResource("ArrayMesh_1oi83")
 skeleton = NodePath("")
 
 [node name="Cube002" type="BoneAttachment3D" parent="doors/door5/Door_rig/Skeleton3D"]
-transform = Transform3D(0.15154, 1.76282e-09, -5.37432e-09, 2.84848e-09, 0.15154, -6.04875e-10, -5.37432e-09, -6.04857e-10, 0.15154, -7.33141e-08, 1.08896, 0.68593)
+transform = Transform3D(0.15154, -3.72529e-09, 2.87882e-09, -3.72529e-09, 0.15154, 3.24007e-10, 2.87883e-09, 3.23993e-10, 0.15154, -7.45245e-08, 1.08896, 0.68593)
 bone_name = "Cube.002"
 bone_idx = 7
 
@@ -2498,7 +2498,7 @@ mesh = SubResource("ArrayMesh_hvlf5")
 skeleton = NodePath("")
 
 [node name="Plane" type="BoneAttachment3D" parent="doors/door5/Door_rig/Skeleton3D"]
-transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 5.60993e-14, 0, -0.151457)
+transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 5.71256e-14, 0, -0.151457)
 bone_name = "Plane"
 bone_idx = 9
 
@@ -2517,7 +2517,7 @@ mesh = SubResource("ArrayMesh_uhuql")
 skeleton = NodePath("")
 
 [node name="Plane002" type="BoneAttachment3D" parent="doors/door5/Door_rig/Skeleton3D"]
-transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 2.19973e-13, 0, 0)
+transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 2.27545e-13, 0, 0)
 bone_name = "Plane.002"
 bone_idx = 13
 
@@ -2728,7 +2728,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_f8i42")
 
 [node name="Plane001" type="BoneAttachment3D" parent="doors/door6/Door_rig/Skeleton3D"]
-transform = Transform3D(-1.66557e-07, 0.714562, 8.14584e-15, -1.10306, -1.07896e-07, -2.36899e-20, -3.38813e-20, -8.14583e-15, 0.714562, 4.44089e-13, 0, -2.49821e-14)
+transform = Transform3D(-1.66557e-07, 0.714562, 8.14583e-15, -1.10306, -1.07896e-07, -2.37169e-20, -3.38813e-20, -8.14583e-15, 0.714562, 4.44089e-13, 0, -2.49821e-14)
 bone_name = "Plane.001"
 bone_idx = 3
 
@@ -2738,7 +2738,7 @@ mesh = SubResource("ArrayMesh_awb6k")
 skeleton = NodePath("")
 
 [node name="Cube" type="BoneAttachment3D" parent="doors/door6/Door_rig/Skeleton3D"]
-transform = Transform3D(0.15154, -1.59263e-15, 5.2406e-15, 0, 0.15154, 0, 5.24059e-15, 4.44089e-15, 0.15154, -9.03252e-08, 1.08896, -0.685929)
+transform = Transform3D(0.15154, 0, 5.24059e-15, 0, 0.15154, 0, 5.24059e-15, 0, 0.15154, -9.03252e-08, 1.08896, -0.685929)
 bone_name = "Cube"
 bone_idx = 5
 
@@ -2748,7 +2748,7 @@ mesh = SubResource("ArrayMesh_1oi83")
 skeleton = NodePath("")
 
 [node name="Cube002" type="BoneAttachment3D" parent="doors/door6/Door_rig/Skeleton3D"]
-transform = Transform3D(0.15154, 1.76282e-09, -5.37432e-09, 2.84848e-09, 0.15154, -6.04875e-10, -5.37432e-09, -6.04857e-10, 0.15154, -7.33141e-08, 1.08896, 0.68593)
+transform = Transform3D(0.15154, -3.72529e-09, 2.87882e-09, -3.72529e-09, 0.15154, 3.24007e-10, 2.87883e-09, 3.23993e-10, 0.15154, -7.45245e-08, 1.08896, 0.68593)
 bone_name = "Cube.002"
 bone_idx = 7
 
@@ -2757,7 +2757,7 @@ mesh = SubResource("ArrayMesh_hvlf5")
 skeleton = NodePath("")
 
 [node name="Plane" type="BoneAttachment3D" parent="doors/door6/Door_rig/Skeleton3D"]
-transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 5.60993e-14, 0, -0.151457)
+transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 5.71256e-14, 0, -0.151457)
 bone_name = "Plane"
 bone_idx = 9
 
@@ -2776,7 +2776,7 @@ mesh = SubResource("ArrayMesh_uhuql")
 skeleton = NodePath("")
 
 [node name="Plane002" type="BoneAttachment3D" parent="doors/door6/Door_rig/Skeleton3D"]
-transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 2.19973e-13, 0, 0)
+transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 2.27545e-13, 0, 0)
 bone_name = "Plane.002"
 bone_idx = 13
 
@@ -2987,7 +2987,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_f8i42")
 
 [node name="Plane001" type="BoneAttachment3D" parent="doors/door7/Door_rig/Skeleton3D"]
-transform = Transform3D(-1.66557e-07, 0.714562, 8.14584e-15, -1.10306, -1.07896e-07, -2.36899e-20, -3.38813e-20, -8.14583e-15, 0.714562, 4.44089e-13, 0, -2.49821e-14)
+transform = Transform3D(-1.66557e-07, 0.714562, 8.14583e-15, -1.10306, -1.07896e-07, -2.37169e-20, -3.38813e-20, -8.14583e-15, 0.714562, 4.44089e-13, 0, -2.49821e-14)
 bone_name = "Plane.001"
 bone_idx = 3
 
@@ -2997,7 +2997,7 @@ mesh = SubResource("ArrayMesh_awb6k")
 skeleton = NodePath("")
 
 [node name="Cube" type="BoneAttachment3D" parent="doors/door7/Door_rig/Skeleton3D"]
-transform = Transform3D(0.15154, -1.59263e-15, 5.2406e-15, 0, 0.15154, 0, 5.24059e-15, 4.44089e-15, 0.15154, -9.03252e-08, 1.08896, -0.685929)
+transform = Transform3D(0.15154, 0, 5.24059e-15, 0, 0.15154, 0, 5.24059e-15, 0, 0.15154, -9.03252e-08, 1.08896, -0.685929)
 bone_name = "Cube"
 bone_idx = 5
 
@@ -3007,7 +3007,7 @@ mesh = SubResource("ArrayMesh_1oi83")
 skeleton = NodePath("")
 
 [node name="Cube002" type="BoneAttachment3D" parent="doors/door7/Door_rig/Skeleton3D"]
-transform = Transform3D(0.15154, 1.76282e-09, -5.37432e-09, 2.84848e-09, 0.15154, -6.04875e-10, -5.37432e-09, -6.04857e-10, 0.15154, -7.33141e-08, 1.08896, 0.68593)
+transform = Transform3D(0.15154, -3.72529e-09, 2.87882e-09, -3.72529e-09, 0.15154, 3.24007e-10, 2.87883e-09, 3.23993e-10, 0.15154, -7.45245e-08, 1.08896, 0.68593)
 bone_name = "Cube.002"
 bone_idx = 7
 
@@ -3016,7 +3016,7 @@ mesh = SubResource("ArrayMesh_hvlf5")
 skeleton = NodePath("")
 
 [node name="Plane" type="BoneAttachment3D" parent="doors/door7/Door_rig/Skeleton3D"]
-transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 5.60993e-14, 0, -0.151457)
+transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 5.71256e-14, 0, -0.151457)
 bone_name = "Plane"
 bone_idx = 9
 
@@ -3035,7 +3035,7 @@ mesh = SubResource("ArrayMesh_uhuql")
 skeleton = NodePath("")
 
 [node name="Plane002" type="BoneAttachment3D" parent="doors/door7/Door_rig/Skeleton3D"]
-transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 2.19973e-13, 0, 0)
+transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 2.27545e-13, 0, 0)
 bone_name = "Plane.002"
 bone_idx = 13
 
@@ -3246,7 +3246,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_f8i42")
 
 [node name="Plane001" type="BoneAttachment3D" parent="doors/door8/Door_rig/Skeleton3D"]
-transform = Transform3D(-1.66557e-07, 0.714562, 8.14584e-15, -1.10306, -1.07896e-07, -2.36899e-20, -3.38813e-20, -8.14583e-15, 0.714562, 4.44089e-13, 0, -2.49821e-14)
+transform = Transform3D(-1.66557e-07, 0.714562, 8.14583e-15, -1.10306, -1.07896e-07, -2.37169e-20, -3.38813e-20, -8.14583e-15, 0.714562, 4.44089e-13, 0, -2.49821e-14)
 bone_name = "Plane.001"
 bone_idx = 3
 
@@ -3256,7 +3256,7 @@ mesh = SubResource("ArrayMesh_awb6k")
 skeleton = NodePath("")
 
 [node name="Cube" type="BoneAttachment3D" parent="doors/door8/Door_rig/Skeleton3D"]
-transform = Transform3D(0.15154, -1.59263e-15, 5.2406e-15, 0, 0.15154, 0, 5.24059e-15, 4.44089e-15, 0.15154, -9.03252e-08, 1.08896, -0.685929)
+transform = Transform3D(0.15154, 0, 5.24059e-15, 0, 0.15154, 0, 5.24059e-15, 0, 0.15154, -9.03252e-08, 1.08896, -0.685929)
 bone_name = "Cube"
 bone_idx = 5
 
@@ -3266,7 +3266,7 @@ mesh = SubResource("ArrayMesh_1oi83")
 skeleton = NodePath("")
 
 [node name="Cube002" type="BoneAttachment3D" parent="doors/door8/Door_rig/Skeleton3D"]
-transform = Transform3D(0.15154, 1.76282e-09, -5.37432e-09, 2.84848e-09, 0.15154, -6.04875e-10, -5.37432e-09, -6.04857e-10, 0.15154, -7.33141e-08, 1.08896, 0.68593)
+transform = Transform3D(0.15154, -3.72529e-09, 2.87882e-09, -3.72529e-09, 0.15154, 3.24007e-10, 2.87883e-09, 3.23993e-10, 0.15154, -7.45245e-08, 1.08896, 0.68593)
 bone_name = "Cube.002"
 bone_idx = 7
 
@@ -3275,7 +3275,7 @@ mesh = SubResource("ArrayMesh_hvlf5")
 skeleton = NodePath("")
 
 [node name="Plane" type="BoneAttachment3D" parent="doors/door8/Door_rig/Skeleton3D"]
-transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 5.60993e-14, 0, -0.151457)
+transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 5.71256e-14, 0, -0.151457)
 bone_name = "Plane"
 bone_idx = 9
 
@@ -3294,7 +3294,7 @@ mesh = SubResource("ArrayMesh_uhuql")
 skeleton = NodePath("")
 
 [node name="Plane002" type="BoneAttachment3D" parent="doors/door8/Door_rig/Skeleton3D"]
-transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 2.19973e-13, 0, 0)
+transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 2.27545e-13, 0, 0)
 bone_name = "Plane.002"
 bone_idx = 13
 
@@ -3505,7 +3505,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_f8i42")
 
 [node name="Plane001" type="BoneAttachment3D" parent="doors/door9/Door_rig/Skeleton3D"]
-transform = Transform3D(-1.66557e-07, 0.714562, 8.14584e-15, -1.10306, -1.07896e-07, -2.36899e-20, -3.38813e-20, -8.14583e-15, 0.714562, 4.44089e-13, 0, -2.49821e-14)
+transform = Transform3D(-1.66557e-07, 0.714562, 8.14583e-15, -1.10306, -1.07896e-07, -2.37169e-20, -3.38813e-20, -8.14583e-15, 0.714562, 4.44089e-13, 0, -2.49821e-14)
 bone_name = "Plane.001"
 bone_idx = 3
 
@@ -3515,7 +3515,7 @@ mesh = SubResource("ArrayMesh_awb6k")
 skeleton = NodePath("")
 
 [node name="Cube" type="BoneAttachment3D" parent="doors/door9/Door_rig/Skeleton3D"]
-transform = Transform3D(0.15154, -1.59263e-15, 5.2406e-15, 0, 0.15154, 0, 5.24059e-15, 4.44089e-15, 0.15154, -9.03252e-08, 1.08896, -0.685929)
+transform = Transform3D(0.15154, 0, 5.24059e-15, 0, 0.15154, 0, 5.24059e-15, 0, 0.15154, -9.03252e-08, 1.08896, -0.685929)
 bone_name = "Cube"
 bone_idx = 5
 
@@ -3525,7 +3525,7 @@ mesh = SubResource("ArrayMesh_1oi83")
 skeleton = NodePath("")
 
 [node name="Cube002" type="BoneAttachment3D" parent="doors/door9/Door_rig/Skeleton3D"]
-transform = Transform3D(0.15154, 1.76282e-09, -5.37432e-09, 2.84848e-09, 0.15154, -6.04875e-10, -5.37432e-09, -6.04857e-10, 0.15154, -7.33141e-08, 1.08896, 0.68593)
+transform = Transform3D(0.15154, -3.72529e-09, 2.87882e-09, -3.72529e-09, 0.15154, 3.24007e-10, 2.87883e-09, 3.23993e-10, 0.15154, -7.45245e-08, 1.08896, 0.68593)
 bone_name = "Cube.002"
 bone_idx = 7
 
@@ -3534,7 +3534,7 @@ mesh = SubResource("ArrayMesh_hvlf5")
 skeleton = NodePath("")
 
 [node name="Plane" type="BoneAttachment3D" parent="doors/door9/Door_rig/Skeleton3D"]
-transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 5.60993e-14, 0, -0.151457)
+transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 5.71256e-14, 0, -0.151457)
 bone_name = "Plane"
 bone_idx = 9
 
@@ -3553,7 +3553,7 @@ mesh = SubResource("ArrayMesh_uhuql")
 skeleton = NodePath("")
 
 [node name="Plane002" type="BoneAttachment3D" parent="doors/door9/Door_rig/Skeleton3D"]
-transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 2.19973e-13, 0, 0)
+transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 2.27545e-13, 0, 0)
 bone_name = "Plane.002"
 bone_idx = 13
 
@@ -3764,7 +3764,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_f8i42")
 
 [node name="Plane001" type="BoneAttachment3D" parent="doors/door/Door_rig/Skeleton3D"]
-transform = Transform3D(-1.66557e-07, 0.714562, 8.14584e-15, -1.10306, -1.07896e-07, -2.36899e-20, -3.38813e-20, -8.14583e-15, 0.714562, 4.44089e-13, 0, -2.49821e-14)
+transform = Transform3D(-1.66557e-07, 0.714562, 8.14583e-15, -1.10306, -1.07896e-07, -2.37169e-20, -3.38813e-20, -8.14583e-15, 0.714562, 4.44089e-13, 0, -2.49821e-14)
 bone_name = "Plane.001"
 bone_idx = 3
 
@@ -3774,7 +3774,7 @@ mesh = SubResource("ArrayMesh_awb6k")
 skeleton = NodePath("")
 
 [node name="Cube" type="BoneAttachment3D" parent="doors/door/Door_rig/Skeleton3D"]
-transform = Transform3D(0.15154, -1.59263e-15, 5.2406e-15, 0, 0.15154, 0, 5.24059e-15, 4.44089e-15, 0.15154, -9.03252e-08, 1.08896, -0.685929)
+transform = Transform3D(0.15154, 0, 5.24059e-15, 0, 0.15154, 0, 5.24059e-15, 0, 0.15154, -9.03252e-08, 1.08896, -0.685929)
 bone_name = "Cube"
 bone_idx = 5
 
@@ -3784,7 +3784,7 @@ mesh = SubResource("ArrayMesh_1oi83")
 skeleton = NodePath("")
 
 [node name="Cube002" type="BoneAttachment3D" parent="doors/door/Door_rig/Skeleton3D"]
-transform = Transform3D(0.15154, 1.76282e-09, -5.37432e-09, 2.84848e-09, 0.15154, -6.04875e-10, -5.37432e-09, -6.04857e-10, 0.15154, -7.33141e-08, 1.08896, 0.68593)
+transform = Transform3D(0.15154, -3.72529e-09, 2.87882e-09, -3.72529e-09, 0.15154, 3.24007e-10, 2.87883e-09, 3.23993e-10, 0.15154, -7.45245e-08, 1.08896, 0.68593)
 bone_name = "Cube.002"
 bone_idx = 7
 
@@ -3793,7 +3793,7 @@ mesh = SubResource("ArrayMesh_hvlf5")
 skeleton = NodePath("")
 
 [node name="Plane" type="BoneAttachment3D" parent="doors/door/Door_rig/Skeleton3D"]
-transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 5.60993e-14, 0, -0.151457)
+transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 5.71256e-14, 0, -0.151457)
 bone_name = "Plane"
 bone_idx = 9
 
@@ -3812,7 +3812,7 @@ mesh = SubResource("ArrayMesh_uhuql")
 skeleton = NodePath("")
 
 [node name="Plane002" type="BoneAttachment3D" parent="doors/door/Door_rig/Skeleton3D"]
-transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 2.19973e-13, 0, 0)
+transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 2.27545e-13, 0, 0)
 bone_name = "Plane.002"
 bone_idx = 13
 
@@ -4023,7 +4023,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_f8i42")
 
 [node name="Plane001" type="BoneAttachment3D" parent="doors/door2/Door_rig/Skeleton3D"]
-transform = Transform3D(-1.66557e-07, 0.714562, 8.14584e-15, -1.10306, -1.07896e-07, -2.36899e-20, -3.38813e-20, -8.14583e-15, 0.714562, 4.44089e-13, 0, -2.49821e-14)
+transform = Transform3D(-1.66557e-07, 0.714562, 8.14583e-15, -1.10306, -1.07896e-07, -2.37169e-20, -3.38813e-20, -8.14583e-15, 0.714562, 4.44089e-13, 0, -2.49821e-14)
 bone_name = "Plane.001"
 bone_idx = 3
 
@@ -4033,7 +4033,7 @@ mesh = SubResource("ArrayMesh_awb6k")
 skeleton = NodePath("")
 
 [node name="Cube" type="BoneAttachment3D" parent="doors/door2/Door_rig/Skeleton3D"]
-transform = Transform3D(0.15154, -1.59263e-15, 5.2406e-15, 0, 0.15154, 0, 5.24059e-15, 4.44089e-15, 0.15154, -9.03252e-08, 1.08896, -0.685929)
+transform = Transform3D(0.15154, 0, 5.24059e-15, 0, 0.15154, 0, 5.24059e-15, 0, 0.15154, -9.03252e-08, 1.08896, -0.685929)
 bone_name = "Cube"
 bone_idx = 5
 
@@ -4043,7 +4043,7 @@ mesh = SubResource("ArrayMesh_1oi83")
 skeleton = NodePath("")
 
 [node name="Cube002" type="BoneAttachment3D" parent="doors/door2/Door_rig/Skeleton3D"]
-transform = Transform3D(0.15154, 1.76282e-09, -5.37432e-09, 2.84848e-09, 0.15154, -6.04875e-10, -5.37432e-09, -6.04857e-10, 0.15154, -7.33141e-08, 1.08896, 0.68593)
+transform = Transform3D(0.15154, -3.72529e-09, 2.87882e-09, -3.72529e-09, 0.15154, 3.24007e-10, 2.87883e-09, 3.23993e-10, 0.15154, -7.45245e-08, 1.08896, 0.68593)
 bone_name = "Cube.002"
 bone_idx = 7
 
@@ -4052,7 +4052,7 @@ mesh = SubResource("ArrayMesh_hvlf5")
 skeleton = NodePath("")
 
 [node name="Plane" type="BoneAttachment3D" parent="doors/door2/Door_rig/Skeleton3D"]
-transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 5.60993e-14, 0, -0.151457)
+transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 5.71256e-14, 0, -0.151457)
 bone_name = "Plane"
 bone_idx = 9
 
@@ -4071,7 +4071,7 @@ mesh = SubResource("ArrayMesh_uhuql")
 skeleton = NodePath("")
 
 [node name="Plane002" type="BoneAttachment3D" parent="doors/door2/Door_rig/Skeleton3D"]
-transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 2.19973e-13, 0, 0)
+transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 2.27545e-13, 0, 0)
 bone_name = "Plane.002"
 bone_idx = 13
 
@@ -4282,7 +4282,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_f8i42")
 
 [node name="Plane001" type="BoneAttachment3D" parent="doors/door3/Door_rig/Skeleton3D"]
-transform = Transform3D(-1.66557e-07, 0.714562, 8.14584e-15, -1.10306, -1.07896e-07, -2.36899e-20, -3.38813e-20, -8.14583e-15, 0.714562, 4.44089e-13, 0, -2.49821e-14)
+transform = Transform3D(-1.66557e-07, 0.714562, 8.14583e-15, -1.10306, -1.07896e-07, -2.37169e-20, -3.38813e-20, -8.14583e-15, 0.714562, 4.44089e-13, 0, -2.49821e-14)
 bone_name = "Plane.001"
 bone_idx = 3
 
@@ -4292,7 +4292,7 @@ mesh = SubResource("ArrayMesh_awb6k")
 skeleton = NodePath("")
 
 [node name="Cube" type="BoneAttachment3D" parent="doors/door3/Door_rig/Skeleton3D"]
-transform = Transform3D(0.15154, -1.59263e-15, 5.2406e-15, 0, 0.15154, 0, 5.24059e-15, 4.44089e-15, 0.15154, -9.03252e-08, 1.08896, -0.685929)
+transform = Transform3D(0.15154, 0, 5.24059e-15, 0, 0.15154, 0, 5.24059e-15, 0, 0.15154, -9.03252e-08, 1.08896, -0.685929)
 bone_name = "Cube"
 bone_idx = 5
 
@@ -4302,7 +4302,7 @@ mesh = SubResource("ArrayMesh_1oi83")
 skeleton = NodePath("")
 
 [node name="Cube002" type="BoneAttachment3D" parent="doors/door3/Door_rig/Skeleton3D"]
-transform = Transform3D(0.15154, 1.76282e-09, -5.37432e-09, 2.84848e-09, 0.15154, -6.04875e-10, -5.37432e-09, -6.04857e-10, 0.15154, -7.33141e-08, 1.08896, 0.68593)
+transform = Transform3D(0.15154, -3.72529e-09, 2.87882e-09, -3.72529e-09, 0.15154, 3.24007e-10, 2.87883e-09, 3.23993e-10, 0.15154, -7.45245e-08, 1.08896, 0.68593)
 bone_name = "Cube.002"
 bone_idx = 7
 
@@ -4311,7 +4311,7 @@ mesh = SubResource("ArrayMesh_hvlf5")
 skeleton = NodePath("")
 
 [node name="Plane" type="BoneAttachment3D" parent="doors/door3/Door_rig/Skeleton3D"]
-transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 5.60993e-14, 0, -0.151457)
+transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 5.71256e-14, 0, -0.151457)
 bone_name = "Plane"
 bone_idx = 9
 
@@ -4330,7 +4330,7 @@ mesh = SubResource("ArrayMesh_uhuql")
 skeleton = NodePath("")
 
 [node name="Plane002" type="BoneAttachment3D" parent="doors/door3/Door_rig/Skeleton3D"]
-transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 2.19973e-13, 0, 0)
+transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 2.27545e-13, 0, 0)
 bone_name = "Plane.002"
 bone_idx = 13
 
@@ -4541,7 +4541,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_f8i42")
 
 [node name="Plane001" type="BoneAttachment3D" parent="doors/door10/Door_rig/Skeleton3D"]
-transform = Transform3D(-1.66557e-07, 0.714562, 8.14584e-15, -1.10306, -1.07896e-07, -2.36899e-20, -3.38813e-20, -8.14583e-15, 0.714562, 4.44089e-13, 0, -2.49821e-14)
+transform = Transform3D(-1.66557e-07, 0.714562, 8.14583e-15, -1.10306, -1.07896e-07, -2.37169e-20, -3.38813e-20, -8.14583e-15, 0.714562, 4.44089e-13, 0, -2.49821e-14)
 bone_name = "Plane.001"
 bone_idx = 3
 
@@ -4551,7 +4551,7 @@ mesh = SubResource("ArrayMesh_awb6k")
 skeleton = NodePath("")
 
 [node name="Cube" type="BoneAttachment3D" parent="doors/door10/Door_rig/Skeleton3D"]
-transform = Transform3D(0.15154, -1.59263e-15, 5.2406e-15, 0, 0.15154, 0, 5.24059e-15, 4.44089e-15, 0.15154, -9.03252e-08, 1.08896, -0.685929)
+transform = Transform3D(0.15154, 0, 5.24059e-15, 0, 0.15154, 0, 5.24059e-15, 0, 0.15154, -9.03252e-08, 1.08896, -0.685929)
 bone_name = "Cube"
 bone_idx = 5
 
@@ -4561,7 +4561,7 @@ mesh = SubResource("ArrayMesh_1oi83")
 skeleton = NodePath("")
 
 [node name="Cube002" type="BoneAttachment3D" parent="doors/door10/Door_rig/Skeleton3D"]
-transform = Transform3D(0.15154, 1.76282e-09, -5.37432e-09, 2.84848e-09, 0.15154, -6.04875e-10, -5.37432e-09, -6.04857e-10, 0.15154, -7.33141e-08, 1.08896, 0.68593)
+transform = Transform3D(0.15154, -3.72529e-09, 2.87882e-09, -3.72529e-09, 0.15154, 3.24007e-10, 2.87883e-09, 3.23993e-10, 0.15154, -7.45245e-08, 1.08896, 0.68593)
 bone_name = "Cube.002"
 bone_idx = 7
 
@@ -4570,7 +4570,7 @@ mesh = SubResource("ArrayMesh_hvlf5")
 skeleton = NodePath("")
 
 [node name="Plane" type="BoneAttachment3D" parent="doors/door10/Door_rig/Skeleton3D"]
-transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 5.60993e-14, 0, -0.151457)
+transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 5.71256e-14, 0, -0.151457)
 bone_name = "Plane"
 bone_idx = 9
 
@@ -4589,7 +4589,7 @@ mesh = SubResource("ArrayMesh_uhuql")
 skeleton = NodePath("")
 
 [node name="Plane002" type="BoneAttachment3D" parent="doors/door10/Door_rig/Skeleton3D"]
-transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 2.19973e-13, 0, 0)
+transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 2.27545e-13, 0, 0)
 bone_name = "Plane.002"
 bone_idx = 13
 
@@ -4800,7 +4800,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_f8i42")
 
 [node name="Plane001" type="BoneAttachment3D" parent="doors/door11/Door_rig/Skeleton3D"]
-transform = Transform3D(-1.66557e-07, 0.714562, 8.14584e-15, -1.10306, -1.07896e-07, -2.36899e-20, -3.38813e-20, -8.14583e-15, 0.714562, 4.44089e-13, 0, -2.49821e-14)
+transform = Transform3D(-1.66557e-07, 0.714562, 8.14583e-15, -1.10306, -1.07896e-07, -2.37169e-20, -3.38813e-20, -8.14583e-15, 0.714562, 4.44089e-13, 0, -2.49821e-14)
 bone_name = "Plane.001"
 bone_idx = 3
 
@@ -4810,7 +4810,7 @@ mesh = SubResource("ArrayMesh_awb6k")
 skeleton = NodePath("")
 
 [node name="Cube" type="BoneAttachment3D" parent="doors/door11/Door_rig/Skeleton3D"]
-transform = Transform3D(0.15154, -1.59263e-15, 5.2406e-15, 0, 0.15154, 0, 5.24059e-15, 4.44089e-15, 0.15154, -9.03252e-08, 1.08896, -0.685929)
+transform = Transform3D(0.15154, 0, 5.24059e-15, 0, 0.15154, 0, 5.24059e-15, 0, 0.15154, -9.03252e-08, 1.08896, -0.685929)
 bone_name = "Cube"
 bone_idx = 5
 
@@ -4820,7 +4820,7 @@ mesh = SubResource("ArrayMesh_1oi83")
 skeleton = NodePath("")
 
 [node name="Cube002" type="BoneAttachment3D" parent="doors/door11/Door_rig/Skeleton3D"]
-transform = Transform3D(0.15154, 1.76282e-09, -5.37432e-09, 2.84848e-09, 0.15154, -6.04875e-10, -5.37432e-09, -6.04857e-10, 0.15154, -7.33141e-08, 1.08896, 0.68593)
+transform = Transform3D(0.15154, -3.72529e-09, 2.87882e-09, -3.72529e-09, 0.15154, 3.24007e-10, 2.87883e-09, 3.23993e-10, 0.15154, -7.45245e-08, 1.08896, 0.68593)
 bone_name = "Cube.002"
 bone_idx = 7
 
@@ -4829,7 +4829,7 @@ mesh = SubResource("ArrayMesh_hvlf5")
 skeleton = NodePath("")
 
 [node name="Plane" type="BoneAttachment3D" parent="doors/door11/Door_rig/Skeleton3D"]
-transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 5.60993e-14, 0, -0.151457)
+transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 5.71256e-14, 0, -0.151457)
 bone_name = "Plane"
 bone_idx = 9
 
@@ -4848,7 +4848,7 @@ mesh = SubResource("ArrayMesh_uhuql")
 skeleton = NodePath("")
 
 [node name="Plane002" type="BoneAttachment3D" parent="doors/door11/Door_rig/Skeleton3D"]
-transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 2.19973e-13, 0, 0)
+transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 2.27545e-13, 0, 0)
 bone_name = "Plane.002"
 bone_idx = 13
 
@@ -5059,7 +5059,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_f8i42")
 
 [node name="Plane001" type="BoneAttachment3D" parent="doors/door12/Door_rig/Skeleton3D"]
-transform = Transform3D(-1.66557e-07, 0.714562, 8.14584e-15, -1.10306, -1.07896e-07, -2.36899e-20, -3.38813e-20, -8.14583e-15, 0.714562, 4.44089e-13, 0, -2.49821e-14)
+transform = Transform3D(-1.66557e-07, 0.714562, 8.14583e-15, -1.10306, -1.07896e-07, -2.37169e-20, -3.38813e-20, -8.14583e-15, 0.714562, 4.44089e-13, 0, -2.49821e-14)
 bone_name = "Plane.001"
 bone_idx = 3
 
@@ -5069,7 +5069,7 @@ mesh = SubResource("ArrayMesh_awb6k")
 skeleton = NodePath("")
 
 [node name="Cube" type="BoneAttachment3D" parent="doors/door12/Door_rig/Skeleton3D"]
-transform = Transform3D(0.15154, -1.59263e-15, 5.2406e-15, 0, 0.15154, 0, 5.24059e-15, 4.44089e-15, 0.15154, -9.03252e-08, 1.08896, -0.685929)
+transform = Transform3D(0.15154, 0, 5.24059e-15, 0, 0.15154, 0, 5.24059e-15, 0, 0.15154, -9.03252e-08, 1.08896, -0.685929)
 bone_name = "Cube"
 bone_idx = 5
 
@@ -5079,7 +5079,7 @@ mesh = SubResource("ArrayMesh_1oi83")
 skeleton = NodePath("")
 
 [node name="Cube002" type="BoneAttachment3D" parent="doors/door12/Door_rig/Skeleton3D"]
-transform = Transform3D(0.15154, 1.76282e-09, -5.37432e-09, 2.84848e-09, 0.15154, -6.04875e-10, -5.37432e-09, -6.04857e-10, 0.15154, -7.33141e-08, 1.08896, 0.68593)
+transform = Transform3D(0.15154, -3.72529e-09, 2.87882e-09, -3.72529e-09, 0.15154, 3.24007e-10, 2.87883e-09, 3.23993e-10, 0.15154, -7.45245e-08, 1.08896, 0.68593)
 bone_name = "Cube.002"
 bone_idx = 7
 
@@ -5088,7 +5088,7 @@ mesh = SubResource("ArrayMesh_hvlf5")
 skeleton = NodePath("")
 
 [node name="Plane" type="BoneAttachment3D" parent="doors/door12/Door_rig/Skeleton3D"]
-transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 5.60993e-14, 0, -0.151457)
+transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 5.71256e-14, 0, -0.151457)
 bone_name = "Plane"
 bone_idx = 9
 
@@ -5107,7 +5107,7 @@ mesh = SubResource("ArrayMesh_uhuql")
 skeleton = NodePath("")
 
 [node name="Plane002" type="BoneAttachment3D" parent="doors/door12/Door_rig/Skeleton3D"]
-transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 2.19973e-13, 0, 0)
+transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 2.27545e-13, 0, 0)
 bone_name = "Plane.002"
 bone_idx = 13
 
@@ -5318,7 +5318,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_f8i42")
 
 [node name="Plane001" type="BoneAttachment3D" parent="doors/door13/Door_rig/Skeleton3D"]
-transform = Transform3D(-1.66557e-07, 0.714562, 8.14584e-15, -1.10306, -1.07896e-07, -2.36899e-20, -3.38813e-20, -8.14583e-15, 0.714562, 4.44089e-13, 0, -2.49821e-14)
+transform = Transform3D(-1.66557e-07, 0.714562, 8.14583e-15, -1.10306, -1.07896e-07, -2.37169e-20, -3.38813e-20, -8.14583e-15, 0.714562, 4.44089e-13, 0, -2.49821e-14)
 bone_name = "Plane.001"
 bone_idx = 3
 
@@ -5328,7 +5328,7 @@ mesh = SubResource("ArrayMesh_awb6k")
 skeleton = NodePath("")
 
 [node name="Cube" type="BoneAttachment3D" parent="doors/door13/Door_rig/Skeleton3D"]
-transform = Transform3D(0.15154, -1.59263e-15, 5.2406e-15, 0, 0.15154, 0, 5.24059e-15, 4.44089e-15, 0.15154, -9.03252e-08, 1.08896, -0.685929)
+transform = Transform3D(0.15154, 0, 5.24059e-15, 0, 0.15154, 0, 5.24059e-15, 0, 0.15154, -9.03252e-08, 1.08896, -0.685929)
 bone_name = "Cube"
 bone_idx = 5
 
@@ -5338,7 +5338,7 @@ mesh = SubResource("ArrayMesh_1oi83")
 skeleton = NodePath("")
 
 [node name="Cube002" type="BoneAttachment3D" parent="doors/door13/Door_rig/Skeleton3D"]
-transform = Transform3D(0.15154, 1.76282e-09, -5.37432e-09, 2.84848e-09, 0.15154, -6.04875e-10, -5.37432e-09, -6.04857e-10, 0.15154, -7.33141e-08, 1.08896, 0.68593)
+transform = Transform3D(0.15154, -3.72529e-09, 2.87882e-09, -3.72529e-09, 0.15154, 3.24007e-10, 2.87883e-09, 3.23993e-10, 0.15154, -7.45245e-08, 1.08896, 0.68593)
 bone_name = "Cube.002"
 bone_idx = 7
 
@@ -5347,7 +5347,7 @@ mesh = SubResource("ArrayMesh_hvlf5")
 skeleton = NodePath("")
 
 [node name="Plane" type="BoneAttachment3D" parent="doors/door13/Door_rig/Skeleton3D"]
-transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 5.60993e-14, 0, -0.151457)
+transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 5.71256e-14, 0, -0.151457)
 bone_name = "Plane"
 bone_idx = 9
 
@@ -5366,7 +5366,7 @@ mesh = SubResource("ArrayMesh_uhuql")
 skeleton = NodePath("")
 
 [node name="Plane002" type="BoneAttachment3D" parent="doors/door13/Door_rig/Skeleton3D"]
-transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 2.19973e-13, 0, 0)
+transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 2.27545e-13, 0, 0)
 bone_name = "Plane.002"
 bone_idx = 13
 
@@ -5577,7 +5577,7 @@ skeleton = NodePath("")
 shape = SubResource("ConvexPolygonShape3D_f8i42")
 
 [node name="Plane001" type="BoneAttachment3D" parent="doors/door14/Door_rig/Skeleton3D"]
-transform = Transform3D(-1.66557e-07, 0.714562, 8.14584e-15, -1.10306, -1.07896e-07, -2.36899e-20, -3.38813e-20, -8.14583e-15, 0.714562, 4.44089e-13, 0, -2.49821e-14)
+transform = Transform3D(-1.66557e-07, 0.714562, 8.14583e-15, -1.10306, -1.07896e-07, -2.37169e-20, -3.38813e-20, -8.14583e-15, 0.714562, 4.44089e-13, 0, -2.49821e-14)
 bone_name = "Plane.001"
 bone_idx = 3
 
@@ -5587,7 +5587,7 @@ mesh = SubResource("ArrayMesh_awb6k")
 skeleton = NodePath("")
 
 [node name="Cube" type="BoneAttachment3D" parent="doors/door14/Door_rig/Skeleton3D"]
-transform = Transform3D(0.15154, -1.59263e-15, 5.2406e-15, 0, 0.15154, 0, 5.24059e-15, 4.44089e-15, 0.15154, -9.03252e-08, 1.08896, -0.685929)
+transform = Transform3D(0.15154, 0, 5.24059e-15, 0, 0.15154, 0, 5.24059e-15, 0, 0.15154, -9.03252e-08, 1.08896, -0.685929)
 bone_name = "Cube"
 bone_idx = 5
 
@@ -5597,7 +5597,7 @@ mesh = SubResource("ArrayMesh_1oi83")
 skeleton = NodePath("")
 
 [node name="Cube002" type="BoneAttachment3D" parent="doors/door14/Door_rig/Skeleton3D"]
-transform = Transform3D(0.15154, 1.76282e-09, -5.37432e-09, 2.84848e-09, 0.15154, -6.04875e-10, -5.37432e-09, -6.04857e-10, 0.15154, -7.33141e-08, 1.08896, 0.68593)
+transform = Transform3D(0.15154, -3.72529e-09, 2.87882e-09, -3.72529e-09, 0.15154, 3.24007e-10, 2.87883e-09, 3.23993e-10, 0.15154, -7.45245e-08, 1.08896, 0.68593)
 bone_name = "Cube.002"
 bone_idx = 7
 
@@ -5606,7 +5606,7 @@ mesh = SubResource("ArrayMesh_hvlf5")
 skeleton = NodePath("")
 
 [node name="Plane" type="BoneAttachment3D" parent="doors/door14/Door_rig/Skeleton3D"]
-transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 5.60993e-14, 0, -0.151457)
+transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 5.71256e-14, 0, -0.151457)
 bone_name = "Plane"
 bone_idx = 9
 
@@ -5625,7 +5625,7 @@ mesh = SubResource("ArrayMesh_uhuql")
 skeleton = NodePath("")
 
 [node name="Plane002" type="BoneAttachment3D" parent="doors/door14/Door_rig/Skeleton3D"]
-transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 2.19973e-13, 0, 0)
+transform = Transform3D(-4.29548e-07, 0.714562, 0, -1.10306, -2.78261e-07, 0, 0, 0, 0.714562, 2.27545e-13, 0, 0)
 bone_name = "Plane.002"
 bone_idx = 13
 

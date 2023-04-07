@@ -20,7 +20,7 @@ func _process(_delta):
 		player = get_overlapping_areas()[0].get_parent().get_parent()
 		move = player.global_position
 		
-		if player.get_meta("sucking") == true:
+		if player is CharacterBody3D and player.get_meta("sucking") == true:
 			get_parent().move_and_collide((move - get_parent().global_position) * _delta * 3)
 			
 			# Check if interacting with the player
