@@ -157,9 +157,15 @@ shadow_mesh = SubResource("ArrayMesh_c2lx2")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u01my"]
 resource_name = "Material.006"
+transparency = 1
+blend_mode = 1
 cull_mode = 2
 vertex_color_use_as_albedo = true
 metallic = 1.0
+metallic_specular = 0.52
+roughness = 0.39
+clearcoat_roughness = 1.0
+refraction_scale = -1.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_8gct7"]
 _surfaces = [{
@@ -224,8 +230,14 @@ shadow_mesh = SubResource("ArrayMesh_4amtd")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xtqoc"]
 resource_name = "Material.006"
 transparency = 1
+blend_mode = 1
+cull_mode = 1
+depth_draw_mode = 2
 vertex_color_use_as_albedo = true
+albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 metallic = 1.0
+metallic_specular = 0.84
+roughness = 0.62
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_6lkgw"]
 _surfaces = [{
@@ -4628,7 +4640,7 @@ libraries = {
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="doors/door10"]
 
 [node name="door11" type="Node3D" parent="doors"]
-transform = Transform3D(-7.43094e-09, 5.92938e-17, 0.17, 5.92938e-17, 0.17, -5.92938e-17, -0.17, 5.92938e-17, -7.43094e-09, -8.84677, -0.555295, -8.50337)
+transform = Transform3D(-7.43094e-09, 5.92938e-17, 0.17, 5.92938e-17, 0.17, -5.92938e-17, -0.17, 5.92938e-17, -7.43094e-09, -9.04582, -0.555295, -8.50337)
 metadata/color = "blue"
 
 [node name="Interaction" type="Area3D" parent="doors/door11"]
@@ -4649,7 +4661,7 @@ mesh = SubResource("ArrayMesh_u8agx")
 skeleton = NodePath("")
 
 [node name="Cube001" type="MeshInstance3D" parent="doors/door11"]
-transform = Transform3D(1.63931, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.93699, 0)
+transform = Transform3D(1.63931, -2.64698e-23, -3.55271e-15, 5.29396e-23, 1, -1.5246e-23, 7.10543e-15, 3.76936e-23, 1, 0, 2.93699, 0)
 mesh = SubResource("ArrayMesh_u7hpw")
 skeleton = NodePath("")
 

@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfg5tv34ymiam"]
+[gd_scene load_steps=5 format=3 uid="uid://cfg5tv34ymiam"]
 
-[ext_resource type="Texture2D" uid="uid://duej8mc7ju84a" path="res://models/gal.png" id="1_dhn81"]
+[ext_resource type="Texture2D" uid="uid://dw1hiluhlpf58" path="res://models/gal.png" id="1_dhn81"]
+[ext_resource type="Script" path="res://menue_screen.gd" id="1_k5qjv"]
 [ext_resource type="FontFile" uid="uid://c8t70bubexj2d" path="res://models/Potra.ttf" id="2_y7uc3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_d3jnx"]
@@ -20,6 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_k5qjv")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 clip_contents = true
