@@ -2,7 +2,7 @@ extends ColorRect
 
 @onready var animator: AnimationPlayer = $AnimationPlayer
 @onready var play_button: Button = find_child("ResumeButton")
-@onready var quit_button: Button = find_child("QuitButton")
+@onready var main_button: Button = find_child("MainMenu")
 @onready var new_button: Button = find_child("NewButton")
 @onready var test_button: Button = find_child("TestButton")
 @onready var restart_button: Button = find_child("RestartButton")
@@ -10,9 +10,14 @@ extends ColorRect
 func _ready() -> void:
 	play_button.pressed.connect(unpause)
 	new_button.pressed.connect(newlevel)
-	quit_button.pressed.connect(get_tree().quit)
+	main_button.pressed.connect(mainmenu)
 	restart_button.pressed.connect(restart)
 	test_button.pressed.connect(test)
+
+func mainmenu():
+	get_tree().change_scene_to_file("res://main_menu.tscn")
+	get_tree().paused = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func test():
 	get_tree().change_scene_to_file("res://scenes/TestLevel.tscn")

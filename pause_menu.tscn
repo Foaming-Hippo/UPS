@@ -233,17 +233,17 @@ text = "Restart"
 [node name="NewButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "New Level"
+text = "Main Level"
 
 [node name="TestButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Test Level"
 
-[node name="QuitButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="MainMenu" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Quit"
+text = "Exit to main menu"
 
 [node name="Map1" type="Sprite2D" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 position = Vector2(1025, 6.10352e-05)
