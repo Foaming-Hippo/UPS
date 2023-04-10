@@ -19,7 +19,7 @@ var pew
 
 
 func _ready():
-	pew = get_node("Camera3D/RayCast3D")
+	pew = get_node("Camera3D/Gun Pointer")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	get_node("UI/player_info").add_health(100)
 
@@ -76,6 +76,6 @@ func _input(delta):
 		pitch = max(min(pitch - delta.relative.y * MOUSE_SENS, 85), -85)
 		rotation_vect = Vector3(deg_to_rad(pitch), deg_to_rad(yaw), 0)
 
-		get_node("CollisionShape3D").set_rotation(rotation_vect)
+		get_node("Collision").set_rotation(rotation_vect)
 		get_node("Camera3D").set_rotation(rotation_vect)
 

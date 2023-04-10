@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://dqr8xwov6x77f" path="res://scenes/door.tscn" id="2_6ie3r"]
 [ext_resource type="PackedScene" uid="uid://b4wm3vqgtyvfp" path="res://scenes/mail.tscn" id="4_bkjje"]
 [ext_resource type="PackedScene" uid="uid://dofg74crgik1u" path="res://scenes/door_key.tscn" id="4_d48fa"]
-[ext_resource type="PackedScene" uid="uid://bqpc467iyfh35" path="res://health.tscn" id="5_u7arj"]
-[ext_resource type="PackedScene" uid="uid://dvt3l62ephgmo" path="res://money_platform.tscn" id="6_d1254"]
+[ext_resource type="PackedScene" path="res://health.tscn" id="5_u7arj"]
+[ext_resource type="PackedScene" path="res://money_platform.tscn" id="6_d1254"]
 [ext_resource type="ArrayMesh" uid="uid://daqyfyi17dp2p" path="res://models/mail.obj" id="8_r6hqh"]
-[ext_resource type="PackedScene" uid="uid://cdnhkp4v1eakb" path="res://AI.tscn" id="10_6w78t"]
+[ext_resource type="PackedScene" uid="uid://dmk0es6ojnpwn" path="res://AI.tscn" id="10_6w78t"]
 [ext_resource type="Texture2D" uid="uid://dognwbf8r81wy" path="res://models/sky.tres" id="10_nkfg2"]
 [ext_resource type="PackedScene" uid="uid://d0pp5dp7vb2w6" path="res://models/ur_anus.glb" id="11_nw02k"]
 

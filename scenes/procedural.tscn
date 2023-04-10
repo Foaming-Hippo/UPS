@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://cuccn8qm6mk8i"]
+
+[ext_resource type="PackedScene" uid="uid://b12go20k62aep" path="res://models/procedural/junction.glb" id="1_811op"]
+[ext_resource type="PackedScene" uid="uid://ch5i1c4lc8d37" path="res://models/procedural/middle.glb" id="2_tfs5t"]
+[ext_resource type="PackedScene" uid="uid://clnh1ktwnj1bh" path="res://models/procedural/corner.glb" id="3_s611w"]
+[ext_resource type="PackedScene" uid="uid://bm7lyj6kl6mje" path="res://models/procedural/ring.glb" id="4_41fuu"]
+[ext_resource type="PackedScene" uid="uid://b8hrt8k5ijdg" path="res://models/procedural/straight.glb" id="5_tgwif"]
+[ext_resource type="PackedScene" uid="uid://0lbraj6ouxtu" path="res://models/procedural/t.glb" id="6_j4lsx"]
+[ext_resource type="PackedScene" uid="uid://d0gl4lcwgsu8n" path="res://models/procedural/wall.glb" id="7_fw7ij"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="junction" parent="." instance=ExtResource("1_811op")]
+
+[node name="middle" parent="." instance=ExtResource("2_tfs5t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 0)
+
+[node name="corner" parent="." instance=ExtResource("3_s611w")]
+
+[node name="corner2" parent="." instance=ExtResource("3_s611w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.81206, 0, -8.19847)
+
+[node name="junction2" parent="." instance=ExtResource("1_811op")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.48498, 0, -23.9631)
+
+[node name="middle2" parent="." instance=ExtResource("2_tfs5t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3016, 0, -16.7156)
+
+[node name="ring" parent="." instance=ExtResource("4_41fuu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.1401, 0, -23.7936)
+
+[node name="straight" parent="." instance=ExtResource("5_tgwif")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0803, 0, -5.70417)
+
+[node name="t" parent="." instance=ExtResource("6_j4lsx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7895, 0, -8.15949)
+
+[node name="wall" parent="." instance=ExtResource("7_fw7ij")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.71624, 0, -19.5388)

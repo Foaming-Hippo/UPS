@@ -15,7 +15,7 @@ func _ready() -> void:
 	test_button.pressed.connect(test)
 
 func mainmenu():
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	get_tree().change_scene_to_file("res://main_menu.tscn")
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
@@ -26,7 +26,7 @@ func test():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func newlevel():
-	get_tree().change_scene_to_file("res://scenes/level_1.tscn")
+	get_tree().change_scene_to_file("res://level_1.tscn")
 	animator.play("Unpause")
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

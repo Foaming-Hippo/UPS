@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_gngof"]
 [ext_resource type="PackedScene" uid="uid://bywr72ybgssck" path="res://scenes/ui.tscn" id="2_4yqj4"]
+[ext_resource type="Script" path="res://scripts/suckphysic.gd" id="2_bbv3r"]
 [ext_resource type="Texture2D" uid="uid://cuiqntwidn1bn" path="res://models/R (5).png" id="2_ge2og"]
-[ext_resource type="Script" path="res://scenes/suckphysic.gd" id="2_uvywf"]
 [ext_resource type="Material" uid="uid://df0qx3oix31iy" path="res://scenes/suck2.tres" id="3_8xwed"]
-[ext_resource type="Script" path="res://scenes/suckring.gd" id="3_ycd8m"]
 [ext_resource type="RibbonTrailMesh" uid="uid://cq08fw8asvt43" path="res://scenes/suckersuck.tres" id="4_kpb85"]
+[ext_resource type="Script" path="res://scripts/suckring.gd" id="5_8h2h2"]
 [ext_resource type="Material" uid="uid://cwi0rst7a0eql" path="res://scenes/SUCK.tres" id="5_ahkf2"]
 [ext_resource type="RibbonTrailMesh" uid="uid://cp0ef2u4irv87" path="res://scenes/othersuck.tres" id="6_lskto"]
-[ext_resource type="PackedScene" uid="uid://1r2nuh8ys2bw" path="res://pause_menu.tscn" id="6_vgsqv"]
+[ext_resource type="PackedScene" uid="uid://bouenlw86gc4x" path="res://pause_menu.tscn" id="6_vgsqv"]
 [ext_resource type="Texture2D" uid="uid://dkb112s3i7qka" path="res://models/arm.png" id="11_i7nsx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_23r7k"]
@@ -47,10 +47,10 @@ metadata/Health = 100
 metadata/MoneyMoney = false
 metadata/sucking = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="Collision" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_23r7k")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Mesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_6dbui")
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -80,16 +80,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.561032, -0.527357, -0.54907
 mesh = SubResource("BoxMesh_ubc4g")
 skeleton = NodePath("../..")
 
-[node name="GPUParticlesAttractorVectorField3D2" type="GPUParticlesAttractorVectorField3D" parent="Camera3D/RightArm"]
+[node name="Suck Attact" type="GPUParticlesAttractorVectorField3D" parent="Camera3D/RightArm"]
 transform = Transform3D(0.993486, -0.00176658, 0.113938, 0.000447967, 0.999933, 0.0115975, -0.113951, -0.011471, 0.99342, 0.0810058, 0.229823, -0.598304)
 rotation_edit_mode = 1
 strength = 0.0
 attenuation = 0.0974196
 directionality = 1.0
 size = Vector3(3.34354, 1.96893, 5.47376)
-script = ExtResource("2_uvywf")
+script = ExtResource("2_bbv3r")
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="Camera3D/RightArm/GPUParticlesAttractorVectorField3D2"]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Camera3D/RightArm/Suck Attact"]
 transform = Transform3D(-0.0506821, -0.0899561, -0.994656, -0.998614, -0.00960947, 0.0517528, -0.0142137, 0.9959, -0.0893443, -0.153388, -0.205317, -2.10834)
 emitting = false
 amount = 100
@@ -98,9 +98,9 @@ trail_enabled = true
 trail_lifetime = 0.2
 process_material = ExtResource("3_8xwed")
 draw_pass_1 = ExtResource("4_kpb85")
-script = ExtResource("3_ycd8m")
+script = ExtResource("5_8h2h2")
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="Camera3D/RightArm/GPUParticlesAttractorVectorField3D2/GPUParticles3D"]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Camera3D/RightArm/Suck Attact/GPUParticles3D"]
 transform = Transform3D(0.00252073, -0.999659, 0.0260112, 0.997237, 0.000581642, -0.0742879, 0.0742474, 0.0261265, 0.996898, -0.0178537, 0.0261409, 0.00152916)
 material_override = SubResource("StandardMaterial3D_rgl5o")
 emitting = false
@@ -114,12 +114,12 @@ trail_enabled = true
 trail_lifetime = 0.2
 process_material = ExtResource("5_ahkf2")
 draw_pass_1 = ExtResource("6_lskto")
-script = ExtResource("3_ycd8m")
+script = ExtResource("5_8h2h2")
 
 [node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Camera3D"]
 size = Vector3(1.97036, 1.91746, 1.57917)
 
-[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+[node name="Gun Pointer" type="RayCast3D" parent="Camera3D"]
 transform = Transform3D(1, -1.99927e-29, 2.91302e-38, 0, -1.31134e-06, -1, 6.66422e-31, 30, -4.37114e-08, -0.0183264, -0.0667701, -0.587758)
 
 [node name="Area3D" type="Area3D" parent="."]
@@ -128,8 +128,6 @@ collision_mask = 20
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("CapsuleShape3D_23r7k")
-
-[node name="UI" parent="." instance=ExtResource("2_4yqj4")]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 omni_range = 4096.0
@@ -155,3 +153,5 @@ texture = ExtResource("11_i7nsx")
 centered = false
 flip_h = true
 flip_v = true
+
+[node name="UI" parent="." instance=ExtResource("2_4yqj4")]
