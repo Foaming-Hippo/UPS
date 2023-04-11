@@ -58,7 +58,7 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.527357, 0.020978)
 current = true
 
 [node name="player_interact" type="Area3D" parent="Camera3D"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, -0.527357, 0.360156)
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, -0.761524, 1.011)
 collision_layer = 2
 collision_mask = 2
 metadata/interacting = false
@@ -86,7 +86,7 @@ size = Vector3(3.34354, 1.96893, 5.47376)
 script = ExtResource("2_bbv3r")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Camera3D/Suck Attact"]
-transform = Transform3D(-0.0405457, -0.0719648, -0.795724, -0.798891, -0.00768766, 0.0414023, -0.011371, 0.796719, -0.0714754, 0.404756, -0.20631, -2.04433)
+transform = Transform3D(-0.0405457, -0.0719648, -0.795724, -0.798892, -0.00768765, 0.0414023, -0.011371, 0.79672, -0.0714755, 0.327243, 0.268276, -2.04774)
 emitting = false
 amount = 100
 lifetime = 0.4
@@ -97,7 +97,7 @@ draw_pass_1 = ExtResource("4_kpb85")
 script = ExtResource("5_8h2h2")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Camera3D/Suck Attact/GPUParticles3D"]
-transform = Transform3D(0.00201657, -0.799727, 0.0208089, 0.797789, 0.000465309, -0.0594303, 0.0593979, 0.0209012, 0.797518, -0.0419818, 0.0377314, -0.478295)
+transform = Transform3D(0.00201657, -0.799727, 0.0208089, 0.79779, 0.000465307, -0.0594303, 0.0593979, 0.0209012, 0.797518, -0.000342548, 0.0260844, 0.00163686)
 material_override = SubResource("StandardMaterial3D_rgl5o")
 emitting = false
 amount = 1000
@@ -117,7 +117,7 @@ transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 size = Vector3(1.97036, 1.91746, 1.57917)
 
 [node name="Gun Pointer" type="RayCast3D" parent="Camera3D"]
-transform = Transform3D(0.8, -5.33138e-31, 2.33042e-38, 0, -3.49691e-08, -0.8, 5.33138e-31, 0.8, -3.49691e-08, -0.0183264, -0.0667701, -0.587758)
+transform = Transform3D(1, -6.66422e-30, 2.91302e-38, 0, -4.37114e-07, -1, 6.66422e-31, 10, -4.37114e-08, 0, -0.0999901, 0)
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
