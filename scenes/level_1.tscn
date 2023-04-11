@@ -1459,7 +1459,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.76167, -0.644769, 57.8791)
 top_level = true
 
 [node name="Sphere" type="MeshInstance3D" parent="skybox"]
-transform = Transform3D(316.95, 196.517, 144.65, 210.782, -339.957, 1.39515e-13, -122.937, -76.2241, 372.93, 0, 0, 0)
+transform = Transform3D(1584.75, 982.586, 723.252, 1053.91, -1699.79, -0.000263238, -614.685, -381.121, 1864.65, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_0e3n5")
 cast_shadow = 2
 lod_bias = 0.001
