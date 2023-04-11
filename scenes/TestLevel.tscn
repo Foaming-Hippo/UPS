@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://ived765i2gat"]
+[gd_scene load_steps=17 format=3 uid="uid://ived765i2gat"]
 
 [ext_resource type="PackedScene" uid="uid://8kxckaup325d" path="res://scenes/AI.tscn" id="1_5m5vk"]
 [ext_resource type="PackedScene" uid="uid://roo6uger2qf8" path="res://scenes/player.tscn" id="1_od6uf"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c1nbk8x11c4db" path="res://scenes/health.tscn" id="9_thapw"]
 [ext_resource type="PackedScene" uid="uid://dni184sonr42r" path="res://scenes/money_platform.tscn" id="10_iyjbg"]
 [ext_resource type="Texture2D" uid="uid://dognwbf8r81wy" path="res://models/sky.tres" id="10_nkfg2"]
+[ext_resource type="PackedScene" uid="uid://dlsti3lnhq7di" path="res://scenes/corner.tscn" id="11_0nscy"]
 [ext_resource type="PackedScene" uid="uid://d0pp5dp7vb2w6" path="res://models/ur_anus.glb" id="11_nw02k"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0uj8w"]
@@ -123,3 +124,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.63051, 1.84812, 4.22816)
 
 [node name="money plate" parent="." instance=ExtResource("10_iyjbg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.40678, 0.491411, 0)
+
+[node name="StaticBody3D" parent="." instance=ExtResource("11_0nscy")]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 0, 1.49645, -12.7307)
+
+[node name="door2" parent="." instance=ExtResource("2_6ie3r")]
+transform = Transform3D(-5.68248e-09, 4.53423e-17, 0.13, 4.53423e-17, 0.13, -4.53423e-17, -0.13, 4.53423e-17, -5.68248e-09, 0.226761, 0.46602, -8.76142)
+metadata/color = "blue"

@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://ytghrgaoqy7f"]
+[gd_scene load_steps=11 format=3 uid="uid://ytghrgaoqy7f"]
 
 [ext_resource type="Shader" path="res://blur.gdshader" id="1_o08cb"]
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="2_yxor6"]
-[ext_resource type="Texture2D" uid="uid://cnidhxv31hjrd" path="res://models/map1.png" id="3_86j2d"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r3hya"]
 shader = ExtResource("1_o08cb")
@@ -48,7 +47,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CenterContainer:modulate")
+tracks/2/path = NodePath("Button Panel:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -99,7 +98,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CenterContainer:modulate")
+tracks/2/path = NodePath("Button Panel:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -151,7 +150,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("CenterContainer:modulate")
+tracks/2/path = NodePath("Button Panel:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -190,7 +189,7 @@ size_flags_horizontal = 0
 color = Color(1, 1, 1, 0)
 script = ExtResource("2_yxor6")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="Button Panel" type="CenterContainer" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 9
@@ -198,59 +197,52 @@ anchor_bottom = 1.0
 offset_right = 256.0
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="Button Panel"]
 custom_minimum_size = Vector2(256, 648)
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Button Panel/PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Button Panel/PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Button Panel/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Paused"
 label_settings = SubResource("LabelSettings_pfaph")
 
-[node name="HSeparator" type="HSeparator" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="Button Panel/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="ResumeButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="ResumeButton" type="Button" parent="Button Panel/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 shortcut = SubResource("Shortcut_u2hel")
 text = "Resume"
 
-[node name="RestartButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="RestartButton" type="Button" parent="Button Panel/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Restart"
 
-[node name="NewButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="NewButton" type="Button" parent="Button Panel/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Main Level"
 
-[node name="TestButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="TestButton" type="Button" parent="Button Panel/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Test Level"
 
-[node name="MainMenu" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="MainMenu" type="Button" parent="Button Panel/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Exit to main menu"
-
-[node name="Map1" type="Sprite2D" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
-position = Vector2(1025, 6.10352e-05)
-scale = Vector2(0.201299, 0.201299)
-texture = ExtResource("3_86j2d")
-centered = false
-flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Unpause"
