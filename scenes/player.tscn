@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://scripts/suckring.gd" id="5_8h2h2"]
 [ext_resource type="Material" uid="uid://cwi0rst7a0eql" path="res://scenes/SUCK.tres" id="5_ahkf2"]
 [ext_resource type="RibbonTrailMesh" uid="uid://cp0ef2u4irv87" path="res://scenes/othersuck.tres" id="6_lskto"]
-[ext_resource type="PackedScene" uid="uid://bouenlw86gc4x" path="res://pause_menu.tscn" id="6_vgsqv"]
+[ext_resource type="PackedScene" uid="uid://ytghrgaoqy7f" path="res://scenes/pause_menu.tscn" id="11_05ej3"]
 [ext_resource type="Texture2D" uid="uid://dkb112s3i7qka" path="res://models/arm.png" id="11_i7nsx"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_23r7k"]
@@ -81,7 +81,7 @@ mesh = SubResource("BoxMesh_ubc4g")
 skeleton = NodePath("../..")
 
 [node name="Suck Attact" type="GPUParticlesAttractorVectorField3D" parent="Camera3D/RightArm"]
-transform = Transform3D(0.993486, -0.00176658, 0.113938, 0.000447967, 0.999933, 0.0115975, -0.113951, -0.011471, 0.99342, 0.0810058, 0.229823, -0.598304)
+transform = Transform3D(0.993486, -0.00176658, 0.113938, 0.000447967, 0.999933, 0.0115975, -0.113951, -0.011471, 0.99342, -0.632797, 0.229823, -0.598304)
 rotation_edit_mode = 1
 strength = 0.0
 attenuation = 0.0974196
@@ -90,7 +90,7 @@ size = Vector3(3.34354, 1.96893, 5.47376)
 script = ExtResource("2_bbv3r")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Camera3D/RightArm/Suck Attact"]
-transform = Transform3D(-0.0506821, -0.0899561, -0.994656, -0.998614, -0.00960947, 0.0517528, -0.0142137, 0.9959, -0.0893443, -0.153388, -0.205317, -2.10834)
+transform = Transform3D(-0.0506821, -0.0899561, -0.994656, -0.998614, -0.00960947, 0.0517528, -0.0142137, 0.9959, -0.0893443, 0.404756, -0.20631, -2.04433)
 emitting = false
 amount = 100
 lifetime = 0.4
@@ -101,7 +101,7 @@ draw_pass_1 = ExtResource("4_kpb85")
 script = ExtResource("5_8h2h2")
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="Camera3D/RightArm/Suck Attact/GPUParticles3D"]
-transform = Transform3D(0.00252073, -0.999659, 0.0260112, 0.997237, 0.000581642, -0.0742879, 0.0742474, 0.0261265, 0.996898, -0.0178537, 0.0261409, 0.00152916)
+transform = Transform3D(0.00252073, -0.999659, 0.0260112, 0.997237, 0.000581642, -0.0742879, 0.0742474, 0.0261265, 0.996898, -0.0419818, 0.0377314, -0.478295)
 material_override = SubResource("StandardMaterial3D_rgl5o")
 emitting = false
 amount = 1000
@@ -139,10 +139,6 @@ metadata/sucking = false
 [node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
 unique_name_in_owner = true
 
-[node name="PauseMenu" parent="." instance=ExtResource("6_vgsqv")]
-unique_name_in_owner = true
-top_level = true
-
 [node name="Arm" type="Sprite2D" parent="."]
 light_mask = 2
 visibility_layer = 2
@@ -155,3 +151,5 @@ flip_h = true
 flip_v = true
 
 [node name="UI" parent="." instance=ExtResource("2_4yqj4")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("11_05ej3")]

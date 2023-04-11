@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqpc467iyfh35"]
+[gd_scene load_steps=4 format=3 uid="uid://c1nbk8x11c4db"]
 
-[ext_resource type="Script" path="res://potion.gd" id="1_wxs72"]
+[ext_resource type="Script" path="res://scripts/potion.gd" id="1_rr2mq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_arrqe"]
 
@@ -11,7 +11,7 @@
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 4
 collision_mask = 4
-script = ExtResource("1_wxs72")
+script = ExtResource("1_rr2mq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_arrqe")
