@@ -4,6 +4,7 @@ var keys
 var mail
 var health
 var money
+var stats
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,6 +12,7 @@ func _ready():
 	keys = []
 	mail = 0
 	health = 0
+	stats = get_node("/root/GameStats")
 	print_label()
 	pass # Replace with function body.
 
@@ -25,6 +27,7 @@ func add_key(key):
 	
 func add_mail(amt):
 	mail += amt
+	stats.numero += 1
 
 func add_health(val):
 	health += val
@@ -40,6 +43,7 @@ func print_label():
 	
 	labelText += "Health: " + str(health)
 	labelText += "\nSucculent Mails: " + str(mail)
+	labelText += "\nTest: " + str(stats.numero)
 	labelText += "\nMoney: " + str(money)
 	labelText += "\nKeys:"
 	for i in keys:

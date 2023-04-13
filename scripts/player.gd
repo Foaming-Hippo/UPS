@@ -16,12 +16,16 @@ var rotation_vect
 var moving = false
 var sprinting = false
 var pew
+var viewport_size
 
 
 func _ready():
 	pew = get_node("Camera3D/Gun Pointer")
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	get_node("UI/player_info").add_health(100)
+	
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	get_node("UI").get_tree().get_root().size_changed.connect(resize)
+	resize()
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -79,3 +83,7 @@ func _input(delta):
 		get_node("Collision").set_rotation(rotation_vect)
 		get_node("Camera3D").set_rotation(rotation_vect)
 
+func resize():
+	viewport_size = get_node("UI").get_viewport_rect().size
+	get_node("SuckGunOverlay").custom_minimum_size = viewport_size
+	print(viewport_size)

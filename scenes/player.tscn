@@ -145,24 +145,11 @@ metadata/_edit_use_anchors_ = true
 [node name="PauseMenu" parent="." instance=ExtResource("11_05ej3")]
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="PauseMenu"]
-process_priority = -2
-custom_minimum_size = Vector2(1280, 720)
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -128.0
-offset_top = -720.0
-offset_right = 1152.0
-grow_horizontal = 0
-grow_vertical = 0
+[node name="SuckGunOverlay" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
-mouse_default_cursor_shape = 1
 texture = ExtResource("11_i7nsx")
-expand_mode = 5
+expand_mode = 1
 metadata/_edit_use_anchors_ = true
