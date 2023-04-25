@@ -1,18 +1,27 @@
-[gd_scene load_steps=109 format=3 uid="uid://dc5cmrlmo48jh"]
+[gd_scene load_steps=124 format=3 uid="uid://dc5cmrlmo48jh"]
 
 [ext_resource type="Texture2D" uid="uid://b0yv0bawakk0t" path="res://models/level-1_mushroom.png" id="1_bvvl8"]
-[ext_resource type="PackedScene" uid="uid://roo6uger2qf8" path="res://scenes/player.tscn" id="3_cla5w"]
 [ext_resource type="PackedScene" uid="uid://dqr8xwov6x77f" path="res://scenes/door.tscn" id="4_lhd41"]
 [ext_resource type="Texture2D" uid="uid://dognwbf8r81wy" path="res://models/sky.tres" id="4_qhxun"]
 [ext_resource type="PackedScene" uid="uid://dofg74crgik1u" path="res://scenes/door_key.tscn" id="4_si3m3"]
 [ext_resource type="PackedScene" uid="uid://b4wm3vqgtyvfp" path="res://scenes/mail.tscn" id="6_8b76s"]
 [ext_resource type="PackedScene" uid="uid://dni184sonr42r" path="res://scenes/money_platform.tscn" id="7_6r6n8"]
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_3vm0p"]
-data = PackedVector3Array(-1, 0, 1, 1, 0, -1, 1, 0, 1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+[ext_resource type="Script" path="res://scripts/player.gd" id="7_jhak6"]
+[ext_resource type="Script" path="res://scripts/suckphysic.gd" id="8_lwmjw"]
+[ext_resource type="Material" uid="uid://df0qx3oix31iy" path="res://scenes/suck2.tres" id="9_f6mlp"]
+[ext_resource type="RibbonTrailMesh" uid="uid://cq08fw8asvt43" path="res://scenes/suckersuck.tres" id="10_xlo74"]
+[ext_resource type="Script" path="res://scripts/suckring.gd" id="11_igt53"]
+[ext_resource type="Texture2D" uid="uid://cuiqntwidn1bn" path="res://models/R (5).png" id="12_yusec"]
+[ext_resource type="Material" uid="uid://cwi0rst7a0eql" path="res://scenes/SUCK.tres" id="13_mrb06"]
+[ext_resource type="RibbonTrailMesh" uid="uid://cp0ef2u4irv87" path="res://scenes/othersuck.tres" id="14_av1i1"]
+[ext_resource type="PackedScene" uid="uid://bywr72ybgssck" path="res://scenes/ui.tscn" id="15_krr8c"]
+[ext_resource type="PackedScene" uid="uid://ytghrgaoqy7f" path="res://scenes/pause_menu.tscn" id="16_m7pxc"]
+[ext_resource type="Texture2D" uid="uid://dkb112s3i7qka" path="res://models/arm.png" id="17_nuc63"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_x27mx"]
 radius = 0.995904
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2gkhv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dstbf"]
 
@@ -232,7 +241,6 @@ resource_name = "Material.006"
 transparency = 1
 blend_mode = 1
 cull_mode = 1
-depth_draw_mode = 2
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.607843, 0.607843, 0.607843, 1)
 metallic = 1.0
@@ -1172,18 +1180,42 @@ albedo_texture = ExtResource("4_qhxun")
 backlight_enabled = true
 backlight = Color(1, 1, 1, 1)
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_23r7k"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_6dbui"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3jc0c"]
+radius = 0.005
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m84eq"]
+height = 5.738
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rgl5o"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.686275, 0.686275, 0.686275, 1)
+albedo_texture = ExtResource("12_yusec")
+albedo_texture_msdf = true
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+use_particle_trails = true
+proximity_fade_enabled = true
+
 [node name="level-1" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0761414, 0, 1.56998)
 
 [node name="Collision" type="StaticBody3D" parent="."]
 transform = Transform3D(75.4397, 0, 0, 0, 75.4397, 0, 0, 0, 75.4397, 0, -0.644769, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Collision"]
-shape = SubResource("ConcavePolygonShape3D_3vm0p")
-
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Collision"]
 transform = Transform3D(-0.0595488, -0.063996, -0.0572388, 0.0562412, -0.0817076, 0.0328424, 0.0648745, 0.0120917, -0.0810118, -1.78586, 0.173959, 0.878791)
 shape = SubResource("SphereShape3D_x27mx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collision"]
+transform = Transform3D(1, 0, 0, 0, 0.005, 0, 0, 0, 2, 0, 0, -0.0578661)
+shape = SubResource("BoxShape3D_2gkhv")
 
 [node name="Sphere2" type="MeshInstance3D" parent="Collision"]
 transform = Transform3D(-0.0595488, -0.063996, -0.0572388, 0.0562412, -0.0817076, 0.0328424, 0.0648745, 0.0120917, -0.0810118, -1.78586, 0.174229, 0.878791)
@@ -1498,7 +1530,6 @@ metadata/color = "blue"
 
 [node name="door7" parent="dooR" instance=ExtResource("4_lhd41")]
 transform = Transform3D(-7.43094e-09, 5.92938e-17, 0.17, 5.92938e-17, 0.17, -5.92938e-17, -0.17, 5.92938e-17, -7.43094e-09, -0.00700361, -0.555295, 37.9543)
-metadata/color = "blue"
 
 [node name="door8" parent="dooR" instance=ExtResource("4_lhd41")]
 transform = Transform3D(0.17, 0, 0, 0, 0.17, 0, 0, 0, 0.17, 2.34381, -0.555295, 33.6696)
@@ -1531,22 +1562,139 @@ metadata/color = "blue"
 [node name="Node3D" type="Node3D" parent="."]
 
 [node name="mail" parent="Node3D" instance=ExtResource("6_8b76s")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 7.52358, -0.429348, 39.3749)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.52358, 0.635706, 39.3749)
 
 [node name="mail2" parent="Node3D" instance=ExtResource("6_8b76s")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 8.42599, -0.429348, 39.3749)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.42599, 0.635706, 39.3749)
 
 [node name="mail3" parent="Node3D" instance=ExtResource("6_8b76s")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 7.52358, -0.429348, 40.6163)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.52358, 0.635706, 40.6163)
 
 [node name="mail4" parent="Node3D" instance=ExtResource("6_8b76s")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 8.42599, -0.429348, 40.6163)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.42599, 0.635706, 40.6163)
 
 [node name="mail5" parent="Node3D" instance=ExtResource("6_8b76s")]
-transform = Transform3D(0.196962, -0.0347296, 6.97574e-17, 0.0347296, 0.196962, -6.97574e-17, -5.65844e-17, 8.08108e-17, 0.2, 7.1928, -0.365297, 39.9755)
+transform = Transform3D(0.984808, -0.173648, 3.48786e-16, 0.173648, 0.984808, -3.48786e-16, -2.82921e-16, 4.04053e-16, 1, 7.1928, 0.699757, 39.9755)
 
 [node name="money plate" parent="." instance=ExtResource("7_6r6n8")]
 transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 0, -0.469137, 47.5262)
 
-[node name="Player" parent="." instance=ExtResource("3_cla5w")]
+[node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.68399, 45.301)
+script = ExtResource("7_jhak6")
+metadata/_edit_group_ = true
+metadata/keys = []
+metadata/money = 0
+metadata/Health = 100
+metadata/MoneyMoney = false
+metadata/sucking = false
+
+[node name="Collision" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_23r7k")
+metadata/player = true
+
+[node name="Mesh" type="MeshInstance3D" parent="Player"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_6dbui")
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.527357, 0.020978)
+current = true
+
+[node name="player_interact" type="Area3D" parent="Player/Camera3D"]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, -0.761524, 1.011)
+collision_layer = 2
+collision_mask = 2
+metadata/interacting = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Camera3D/player_interact"]
+transform = Transform3D(1.80758e-15, 5.68248e-08, 0.8, 0.8, -5.68248e-08, -2.79032e-16, 3.49691e-08, 1.3, -3.49691e-08, 0, 0.471252, -2.08086)
+shape = SubResource("CylinderShape3D_3jc0c")
+
+[node name="SuckCone" type="Area3D" parent="Player/Camera3D"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, -0.527357, -0.020978)
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Camera3D/SuckCone"]
+transform = Transform3D(0.8, -5.33139e-31, 2.33043e-38, 0, -3.49691e-08, -0.8, 5.33139e-31, 0.8, -3.49691e-08, 0, 0.501796, -2.35438)
+shape = SubResource("CapsuleShape3D_m84eq")
+
+[node name="Suck Attact" type="GPUParticlesAttractorVectorField3D" parent="Player/Camera3D"]
+transform = Transform3D(0.794789, -0.00141326, 0.0911506, 0.000358374, 0.799946, 0.00927806, -0.0911608, -0.0091768, 0.794736, -0.071765, -0.297534, -1.14737)
+rotation_edit_mode = 1
+strength = 0.0
+attenuation = 0.0974196
+directionality = 1.0
+size = Vector3(3.34354, 1.96893, 5.47376)
+script = ExtResource("8_lwmjw")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Player/Camera3D/Suck Attact"]
+transform = Transform3D(-0.0405457, -0.0719648, -0.795724, -0.798892, -0.00768765, 0.0414023, -0.011371, 0.79672, -0.0714755, 0.327243, 0.268276, -2.04774)
+emitting = false
+amount = 100
+lifetime = 0.4
+trail_enabled = true
+trail_lifetime = 0.2
+process_material = ExtResource("9_f6mlp")
+draw_pass_1 = ExtResource("10_xlo74")
+script = ExtResource("11_igt53")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Player/Camera3D/Suck Attact/GPUParticles3D"]
+transform = Transform3D(0.00201657, -0.799727, 0.0208089, 0.79779, 0.000465307, -0.0594303, 0.0593979, 0.0209012, 0.797518, -0.000342548, 0.0260844, 0.00163686)
+material_override = SubResource("StandardMaterial3D_rgl5o")
+emitting = false
+amount = 1000
+lifetime = 0.22
+randomness = 1.0
+fixed_fps = 60
+visibility_aabb = AABB(-4, -4.1, -4, 8, 8, 8)
+local_coords = true
+trail_enabled = true
+trail_lifetime = 0.2
+process_material = ExtResource("13_mrb06")
+draw_pass_1 = ExtResource("14_av1i1")
+script = ExtResource("11_igt53")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Player/Camera3D"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+size = Vector3(1.97036, 1.91746, 1.57917)
+
+[node name="Gun Pointer" type="RayCast3D" parent="Player/Camera3D"]
+transform = Transform3D(1, -6.66422e-30, 2.91302e-38, 0, -4.37114e-07, -1, 6.66422e-31, 10, -4.37114e-08, 0, -0.0999901, 0)
+
+[node name="Area3D" type="Area3D" parent="Player"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+collision_layer = 20
+collision_mask = 20
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Area3D"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_23r7k")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Player"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+omni_range = 4096.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Player"]
+unique_name_in_owner = true
+metadata/sucking = false
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="Player"]
+unique_name_in_owner = true
+
+[node name="UI" parent="Player" instance=ExtResource("15_krr8c")]
+metadata/_edit_use_anchors_ = true
+
+[node name="PauseMenu" parent="Player" instance=ExtResource("16_m7pxc")]
+metadata/_edit_use_anchors_ = true
+
+[node name="SuckGunOverlay" type="TextureRect" parent="Player"]
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+texture = ExtResource("17_nuc63")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true

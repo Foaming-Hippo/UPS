@@ -1,0 +1,183 @@
+[gd_scene load_steps=20 format=3 uid="uid://bn67kv0xdnqrl"]
+
+[ext_resource type="Script" path="res://RandomLevel.gd" id="1_poc4t"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="2_ox80m"]
+[ext_resource type="Script" path="res://scripts/suckphysic.gd" id="3_sx3i2"]
+[ext_resource type="Material" uid="uid://df0qx3oix31iy" path="res://scenes/suck2.tres" id="4_byyxq"]
+[ext_resource type="RibbonTrailMesh" uid="uid://cq08fw8asvt43" path="res://scenes/suckersuck.tres" id="5_ub8ab"]
+[ext_resource type="Script" path="res://scripts/suckring.gd" id="6_8erjq"]
+[ext_resource type="Texture2D" uid="uid://cuiqntwidn1bn" path="res://models/R (5).png" id="7_y03g7"]
+[ext_resource type="Material" uid="uid://cwi0rst7a0eql" path="res://scenes/SUCK.tres" id="8_vcc3g"]
+[ext_resource type="RibbonTrailMesh" uid="uid://cp0ef2u4irv87" path="res://scenes/othersuck.tres" id="9_qydhr"]
+[ext_resource type="PackedScene" uid="uid://bywr72ybgssck" path="res://scenes/ui.tscn" id="10_iah6s"]
+[ext_resource type="PackedScene" uid="uid://ytghrgaoqy7f" path="res://scenes/pause_menu.tscn" id="11_pjqty"]
+[ext_resource type="Texture2D" uid="uid://dkb112s3i7qka" path="res://models/arm.png" id="12_6b5v7"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gmkev"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_giq4k"]
+size = Vector3(14.208, 3, 500)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_23r7k"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_6dbui"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3jc0c"]
+radius = 0.005
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m84eq"]
+height = 5.738
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rgl5o"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.686275, 0.686275, 0.686275, 1)
+albedo_texture = ExtResource("7_y03g7")
+albedo_texture_msdf = true
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+use_particle_trails = true
+proximity_fade_enabled = true
+
+[node name="Level" type="Node3D"]
+script = ExtResource("1_poc4t")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_gmkev")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 413.456, 0)
+sky_mode = 1
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.26844, 32.7477, 84.4461)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -39.6653)
+shape = SubResource("BoxShape3D_giq4k")
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0.071434, 40.0777, 83.3452)
+floor_snap_length = 0.0
+script = ExtResource("2_ox80m")
+metadata/_edit_group_ = true
+metadata/keys = []
+metadata/money = 0
+metadata/Health = 100
+metadata/MoneyMoney = false
+metadata/sucking = false
+
+[node name="Collision" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_23r7k")
+metadata/player = true
+
+[node name="Mesh" type="MeshInstance3D" parent="Player"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_6dbui")
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1.25, -4.35984e-16, 4.35984e-16, 4.35984e-16, 1.25, -4.35984e-16, -4.35984e-16, 4.35984e-16, 1.25, 0, 0.527351, 0.020978)
+current = true
+
+[node name="player_interact" type="Area3D" parent="Player/Camera3D"]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, 0, -0.761524, 1.011)
+collision_layer = 2
+collision_mask = 2
+metadata/interacting = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Camera3D/player_interact"]
+transform = Transform3D(1.80758e-15, 5.68248e-08, 0.8, 0.8, -5.68248e-08, -2.79032e-16, 3.49691e-08, 1.3, -3.49691e-08, 0, 0.471252, -2.08086)
+shape = SubResource("CylinderShape3D_3jc0c")
+
+[node name="SuckCone" type="Area3D" parent="Player/Camera3D"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, -0.527357, -0.020978)
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Camera3D/SuckCone"]
+transform = Transform3D(0.8, -5.33139e-31, 2.33043e-38, 0, -3.49691e-08, -0.8, 5.33139e-31, 0.8, -3.49691e-08, 0, 0.501796, -2.35438)
+shape = SubResource("CapsuleShape3D_m84eq")
+
+[node name="Suck Attact" type="GPUParticlesAttractorVectorField3D" parent="Player/Camera3D"]
+transform = Transform3D(0.794789, -0.00141326, 0.0911506, 0.000358374, 0.799946, 0.00927806, -0.0911608, -0.0091768, 0.794736, -0.071765, -0.297534, -1.14737)
+rotation_edit_mode = 1
+strength = 0.0
+attenuation = 0.0974196
+directionality = 1.0
+size = Vector3(3.34354, 1.96893, 5.47376)
+script = ExtResource("3_sx3i2")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Player/Camera3D/Suck Attact"]
+transform = Transform3D(-0.0405457, -0.0719648, -0.795724, -0.798892, -0.00768765, 0.0414023, -0.011371, 0.79672, -0.0714755, 0.327243, 0.268276, -2.04774)
+emitting = false
+amount = 100
+lifetime = 0.4
+trail_enabled = true
+trail_lifetime = 0.2
+process_material = ExtResource("4_byyxq")
+draw_pass_1 = ExtResource("5_ub8ab")
+script = ExtResource("6_8erjq")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Player/Camera3D/Suck Attact/GPUParticles3D"]
+transform = Transform3D(0.00201657, -0.799727, 0.0208089, 0.79779, 0.000465307, -0.0594303, 0.0593979, 0.0209012, 0.797518, -0.000342548, 0.0260844, 0.00163686)
+material_override = SubResource("StandardMaterial3D_rgl5o")
+emitting = false
+amount = 1000
+lifetime = 0.22
+randomness = 1.0
+fixed_fps = 60
+visibility_aabb = AABB(-4, -4.1, -4, 8, 8, 8)
+local_coords = true
+trail_enabled = true
+trail_lifetime = 0.2
+process_material = ExtResource("8_vcc3g")
+draw_pass_1 = ExtResource("9_qydhr")
+script = ExtResource("6_8erjq")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Player/Camera3D"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+size = Vector3(1.97036, 1.91746, 1.57917)
+
+[node name="Gun Pointer" type="RayCast3D" parent="Player/Camera3D"]
+transform = Transform3D(1, -6.66422e-30, 2.91302e-38, 0, -4.37114e-07, -1, 6.66422e-31, 10, -4.37114e-08, 0, -0.0999901, 0)
+
+[node name="Area3D" type="Area3D" parent="Player"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+collision_layer = 20
+collision_mask = 20
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/Area3D"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_23r7k")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Player"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+omni_range = 4096.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Player"]
+unique_name_in_owner = true
+metadata/sucking = false
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="Player"]
+unique_name_in_owner = true
+
+[node name="UI" parent="Player" instance=ExtResource("10_iah6s")]
+metadata/_edit_use_anchors_ = true
+
+[node name="PauseMenu" parent="Player" instance=ExtResource("11_pjqty")]
+metadata/_edit_use_anchors_ = true
+
+[node name="SuckGunOverlay" type="TextureRect" parent="Player"]
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+texture = ExtResource("12_6b5v7")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true

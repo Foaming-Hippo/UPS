@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GameStats="*res://scripts/game_stats.gd"
+ROOMS="*res://scripts/globals/ROOMS.gd"
 
 [input]
 

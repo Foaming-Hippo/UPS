@@ -5,6 +5,7 @@ var player
 var sound1
 var sound2
 
+
 func _ready():
 	player = get_parent().get_parent()
 	sound1 = player.get_node("AudioStreamPlayer3D")

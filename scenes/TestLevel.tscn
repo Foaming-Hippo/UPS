@@ -80,7 +80,7 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.21409, 0.856388, 13.1
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.139, 0.856388, 11.6944)
 
 [node name="GPUParticles3D" type="CPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.85358, 1.37182, 11.8891)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.53983, 1.37182, 11.8891)
 rotation_edit_mode = 1
 amount = 25
 lifetime = 22.69

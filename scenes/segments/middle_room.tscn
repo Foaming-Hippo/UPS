@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://cd88mjuwbhkp4"]
+
+[ext_resource type="Script" path="res://scripts/segments/middle_room.gd" id="1_rakbf"]
+[ext_resource type="PackedScene" uid="uid://rn08c2c84akd" path="res://models/procedural/room corner.glb" id="2_xamee"]
+[ext_resource type="PackedScene" uid="uid://xvg66rwm77go" path="res://models/procedural/room mid.glb" id="3_fja1g"]
+[ext_resource type="PackedScene" uid="uid://cg2exmk674gxv" path="res://models/procedural/room side.glb" id="4_ttv7h"]
+[ext_resource type="PackedScene" uid="uid://bm7lyj6kl6mje" path="res://models/procedural/ring.glb" id="5_jby48"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_is4an"]
+size = Vector3(10.5, 2.08165e-12, 9.5)
+
+[node name="middle_room" type="Node3D"]
+script = ExtResource("1_rakbf")
+
+[node name="room corner" parent="." instance=ExtResource("2_xamee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 2.08165e-12, -1.75)
+
+[node name="room corner2" parent="." instance=ExtResource("2_xamee")]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, -1.75, 2.08165e-12, -1.75)
+
+[node name="room corner3" parent="." instance=ExtResource("2_xamee")]
+transform = Transform3D(-1, 3.48787e-16, -8.74228e-08, 3.48787e-16, 1, -3.48787e-16, 8.74228e-08, -3.48787e-16, -1, -1.75, 2.08165e-12, 1.75)
+
+[node name="room corner4" parent="." instance=ExtResource("2_xamee")]
+transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 1.75, 2.08165e-12, 1.75)
+
+[node name="room mid" parent="." instance=ExtResource("3_fja1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+
+[node name="room side" parent="." instance=ExtResource("4_ttv7h")]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, -1.75, 2.08165e-12, 2.08165e-12)
+
+[node name="room side2" parent="." instance=ExtResource("4_ttv7h")]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 2.08165e-12, -1.75)
+
+[node name="room side3" parent="." instance=ExtResource("4_ttv7h")]
+transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 1.75, 2.08165e-12, 2.08165e-12)
+
+[node name="room side4" parent="." instance=ExtResource("4_ttv7h")]
+transform = Transform3D(-1, 3.48787e-16, -8.74228e-08, 3.48787e-16, 1, -3.48787e-16, 8.74228e-08, -3.48787e-16, -1, 2.08165e-12, 2.08165e-12, 1.75)
+
+[node name="ring" parent="." instance=ExtResource("5_jby48")]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 2.08165e-12, 2.08165e-12, -5.09)
+
+[node name="ring2" parent="." instance=ExtResource("5_jby48")]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 2.08165e-12, 2.08165e-12, 5.09)
+
+[node name="ring3" parent="." instance=ExtResource("5_jby48")]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, -5.09, 2.08165e-12, 2.08165e-12)
+
+[node name="ring4" parent="." instance=ExtResource("5_jby48")]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 5.09, 2.08165e-12, 2.08165e-12)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, -3.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, -4.02214e-24, 0, -4.02214e-24, 1, 0, 0, 0, 1, -0.0488942, -1, 3.537)
+shape = SubResource("BoxShape3D_is4an")

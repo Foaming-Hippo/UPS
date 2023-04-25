@@ -1,41 +1,229 @@
-[gd_scene format=3 uid="uid://bopgxkbuakskb"]
+[gd_scene load_steps=3 format=3 uid="uid://bopgxkbuakskb"]
+
+[ext_resource type="Script" path="res://scripts/level_select.gd" id="1_sqo61"]
+[ext_resource type="Texture2D" uid="uid://dw1hiluhlpf58" path="res://models/gal.png" id="2_qnyv4"]
 
 [node name="Control" type="Control"]
+custom_minimum_size = Vector2(605, 340)
 layout_mode = 3
-anchors_preset = 13
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.5
+offset_left = -302.0
+offset_top = -170.0
+offset_right = 303.0
+offset_bottom = 170.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_sqo61")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-layout_direction = 1
+[node name="TextureRect" type="TextureRect" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -32.0
-offset_right = -200.0
-offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
+texture = ExtResource("2_qnyv4")
+expand_mode = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="main_window" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(600, 330)
+layout_mode = 1
+offset_right = 604.0
+offset_bottom = 342.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="main_window"]
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
-custom_minimum_size = Vector2(100, 30)
+[node name="PanelContainer" type="PanelContainer" parent="main_window/VBoxContainer"]
+custom_minimum_size = Vector2(3, 30)
 layout_mode = 2
-text = "klkjlkjlkjlkj"
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
-custom_minimum_size = Vector2(100, 30)
+[node name="stat_bar" type="HBoxContainer" parent="main_window/VBoxContainer/PanelContainer"]
+custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
-text = "whaaaa
+
+[node name="debt" type="RichTextLabel" parent="main_window/VBoxContainer/PanelContainer/stat_bar"]
+clip_contents = false
+custom_minimum_size = Vector2(150, 2.08165e-12)
+layout_mode = 2
+tooltip_text = "The sad sad sad amount of money you owe :("
+text = "Debt: $10,000,000"
+scroll_active = false
+
+[node name="tokens" type="RichTextLabel" parent="main_window/VBoxContainer/PanelContainer/stat_bar"]
+custom_minimum_size = Vector2(200, 2.08165e-12)
+layout_mode = 2
+text = "Upgrade Tokens: 5"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="main_window/VBoxContainer"]
+layout_mode = 2
+
+[node name="side_buttons" type="PanelContainer" parent="main_window/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 2.08165e-12)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="main_window/VBoxContainer/HBoxContainer/side_buttons"]
+custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="main_window/VBoxContainer/HBoxContainer/side_buttons/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="main_window/VBoxContainer/HBoxContainer/side_buttons/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 253)
+layout_mode = 2
+
+[node name="levels" type="Button" parent="main_window/VBoxContainer/HBoxContainer/side_buttons/MarginContainer/VBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "Levels
 "
-autowrap_mode = 0
+
+[node name="upgrades" type="Button" parent="main_window/VBoxContainer/HBoxContainer/side_buttons/MarginContainer/VBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "Upgrades"
+
+[node name="quit" type="Button" parent="main_window/VBoxContainer/HBoxContainer/side_buttons/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "Quit
+"
+
+[node name="level_menu" type="PanelContainer" parent="main_window/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 2.08165e-12)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="main_window/VBoxContainer/HBoxContainer/level_menu"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="main_window/VBoxContainer/HBoxContainer/level_menu/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 100)
+layout_mode = 2
+text = "Insert a cool name for a level"
+
+[node name="Button2" type="Button" parent="main_window/VBoxContainer/HBoxContainer/level_menu/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 100)
+layout_mode = 2
+text = "I still need some names idk"
+
+[node name="Button3" type="Button" parent="main_window/VBoxContainer/HBoxContainer/level_menu/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 100)
+layout_mode = 2
+text = "Cool McAwesomevill"
+
+[node name="upgrade_menu" type="PanelContainer" parent="main_window/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(500, 2.08165e-12)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="main_window/VBoxContainer/HBoxContainer/upgrade_menu"]
+layout_mode = 2
+
+[node name="health" type="PanelContainer" parent="main_window/VBoxContainer/HBoxContainer/upgrade_menu/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="main_window/VBoxContainer/HBoxContainer/upgrade_menu/VBoxContainer/health"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="main_window/VBoxContainer/HBoxContainer/upgrade_menu/VBoxContainer/health/HBoxContainer"]
+custom_minimum_size = Vector2(50, 2.08165e-12)
+layout_mode = 2
+text = "^"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="main_window/VBoxContainer/HBoxContainer/upgrade_menu/VBoxContainer/health/HBoxContainer"]
+custom_minimum_size = Vector2(95, 2.08165e-12)
+layout_mode = 2
+tooltip_text = "The speed at which you suck mail into your possesion "
+theme_override_font_sizes/normal_font_size = 17
+text = "Health"
+scroll_active = false
+
+[node name="suck_speed" type="PanelContainer" parent="main_window/VBoxContainer/HBoxContainer/upgrade_menu/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="main_window/VBoxContainer/HBoxContainer/upgrade_menu/VBoxContainer/suck_speed"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="main_window/VBoxContainer/HBoxContainer/upgrade_menu/VBoxContainer/suck_speed/HBoxContainer"]
+custom_minimum_size = Vector2(50, 2.08165e-12)
+layout_mode = 2
+text = "^"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="main_window/VBoxContainer/HBoxContainer/upgrade_menu/VBoxContainer/suck_speed/HBoxContainer"]
+custom_minimum_size = Vector2(95, 2.08165e-12)
+layout_mode = 2
+tooltip_text = "The speed at which you suck mail into your possesion "
+theme_override_font_sizes/normal_font_size = 17
+text = "Suck Speed"
+scroll_active = false
+
+[node name="quit_fr" type="PanelContainer" parent="."]
+visible = false
+custom_minimum_size = Vector2(400, 150)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -201.5
+offset_top = -123.0
+offset_right = 202.5
+offset_bottom = 123.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="quit_fr"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="quit_fr/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 43)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="quit_fr/VBoxContainer"]
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center]Are you sure?[/center]"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="quit_fr/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center](All progress will be lost)"
+
+[node name="MarginContainer2" type="MarginContainer" parent="quit_fr/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 12)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="quit_fr/VBoxContainer"]
+layout_mode = 2
+
+[node name="quitquit" type="Button" parent="quit_fr/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 2.08165e-12)
+layout_mode = 2
+text = "Set me free"
+
+[node name="dont_quit" type="Button" parent="quit_fr/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 75)
+layout_mode = 2
+text = "No, I am not :("

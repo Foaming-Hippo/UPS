@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://khow5o5goeo3"]
+
+[ext_resource type="Script" path="res://scripts/segments/tri_room_right.gd" id="1_017ge"]
+[ext_resource type="PackedScene" uid="uid://xvg66rwm77go" path="res://models/procedural/room mid.glb" id="2_m3j11"]
+[ext_resource type="PackedScene" uid="uid://rn08c2c84akd" path="res://models/procedural/room corner.glb" id="3_17sb3"]
+[ext_resource type="PackedScene" uid="uid://cg2exmk674gxv" path="res://models/procedural/room side.glb" id="4_u8fuu"]
+[ext_resource type="PackedScene" uid="uid://dmfot2xd8xtti" path="res://models/procedural/room wall.glb" id="5_ajskj"]
+[ext_resource type="PackedScene" uid="uid://bm7lyj6kl6mje" path="res://models/procedural/ring.glb" id="6_5ofo0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0gley"]
+size = Vector3(6.5, 2.08165e-12, 9.5)
+
+[node name="tri_room_right" type="Node3D"]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+script = ExtResource("1_017ge")
+
+[node name="room mid" parent="." instance=ExtResource("2_m3j11")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+
+[node name="room corner" parent="." instance=ExtResource("3_17sb3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 2.08165e-12, -1.75)
+
+[node name="room side" parent="." instance=ExtResource("4_u8fuu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, -1.75)
+
+[node name="room corner2" parent="." instance=ExtResource("3_17sb3")]
+transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 1.75, 2.08165e-12, 1.75)
+
+[node name="room side2" parent="." instance=ExtResource("4_u8fuu")]
+transform = Transform3D(-1, 3.48787e-16, -8.74228e-08, 3.48787e-16, 1, -3.48787e-16, 8.74228e-08, -3.48787e-16, -1, 2.08165e-12, 2.08165e-12, 1.75)
+
+[node name="room side3" parent="." instance=ExtResource("4_u8fuu")]
+transform = Transform3D(-4.37114e-08, -3.48787e-16, -1, 3.48787e-16, 1, -3.48787e-16, 1, -3.48787e-16, -4.37114e-08, 1.75, 2.08165e-12, 2.08165e-12)
+
+[node name="room wall" parent="." instance=ExtResource("5_ajskj")]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 1.75, 2.08165e-12, -3.5)
+
+[node name="room wall2" parent="." instance=ExtResource("5_ajskj")]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 1.75, 2.08165e-12, -0.5)
+
+[node name="room wall3" parent="." instance=ExtResource("5_ajskj")]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 1.75, 2.08165e-12, 3.5)
+
+[node name="room wall4" parent="." instance=ExtResource("5_ajskj")]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 1.75, 2.08165e-12, 2.5)
+
+[node name="ring" parent="." instance=ExtResource("6_5ofo0")]
+transform = Transform3D(1, -3.48787e-16, 3.48787e-16, 3.48787e-16, 1, -3.48787e-16, -3.48787e-16, 3.48787e-16, 1, 5.09, 2.08165e-12, 2.08165e-12)
+
+[node name="ring2" parent="." instance=ExtResource("6_5ofo0")]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 2.08165e-12, 2.08165e-12, 5.09)
+
+[node name="ring3" parent="." instance=ExtResource("6_5ofo0")]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 2.08165e-12, 2.08165e-12, -5.09)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, -1.21652e-31, 0, -1.21652e-31, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, -3.5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, -4.02214e-24, 0, -4.02214e-24, 1, 0, 0, 0, 1, 1.481, -1, 3.537)
+shape = SubResource("BoxShape3D_0gley")
