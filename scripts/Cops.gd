@@ -34,4 +34,4 @@ func _on_timer_timeout():
 		return
 
 	if abs(parent.velocity.z) < 3.6 and abs(parent.velocity.x) < 3.6:
-		player.get_node("UI/player_info").add_health(-10)
+		player.change_health(-10)

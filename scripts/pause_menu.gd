@@ -1,6 +1,6 @@
-extends ColorRect
+extends Control
 
-@onready var animator: AnimationPlayer = $AnimationPlayer
+@onready var animator: AnimationPlayer = $PauseMenu/AnimationPlayer
 @onready var play_button: Button = find_child("ResumeButton")
 @onready var main_button: Button = find_child("MainMenu")
 @onready var restart_button: Button = find_child("RestartButton")
@@ -30,4 +30,9 @@ func unpause():
 func pause():
 	animator.play("Pause")
 	get_tree().paused = true
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+func _on_player_dead():
+	get_tree().paused = true
+	$ded_screen.visible = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

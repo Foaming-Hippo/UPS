@@ -26,11 +26,6 @@ func add_key(key):
 	
 func add_mail(amt):
 	mail += amt
-
-func add_health(val):
-	health += val
-	if health > 100:
-		health = 100
 		
 func add_money(dollar):
 	money += dollar

@@ -55,7 +55,8 @@ clip_contents = false
 custom_minimum_size = Vector2(150, 2.08165e-12)
 layout_mode = 2
 tooltip_text = "The sad sad sad amount of money you owe :("
-text = "Debt: $10,000,000"
+bbcode_enabled = true
+text = "Debt: [color=red]-$10,000,000"
 scroll_active = false
 
 [node name="tokens" type="RichTextLabel" parent="main_window/VBoxContainer/PanelContainer/stat_bar"]

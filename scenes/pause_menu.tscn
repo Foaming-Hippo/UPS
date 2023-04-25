@@ -179,63 +179,133 @@ _data = {
 "Unpause": SubResource("Animation_epkqp")
 }
 
-[node name="PauseMenu" type="ColorRect"]
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_yxor6")
+
+[node name="PauseMenu" type="ColorRect" parent="."]
 process_mode = 3
 material = SubResource("ShaderMaterial_r3hya")
-anchors_preset = 9
-anchor_bottom = 1.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
 color = Color(1, 1, 1, 0)
-script = ExtResource("2_yxor6")
 
-[node name="Button Panel" type="CenterContainer" parent="."]
+[node name="Button Panel" type="CenterContainer" parent="PauseMenu"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 256.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -225.0
+offset_right = 128.0
+offset_bottom = 225.0
+grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="Button Panel"]
+[node name="PanelContainer" type="PanelContainer" parent="PauseMenu/Button Panel"]
 custom_minimum_size = Vector2(256, 450)
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Button Panel/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu/Button Panel/PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Button Panel/PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/Button Panel/PanelContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Button Panel/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PauseMenu/Button Panel/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 8)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PauseMenu/Button Panel/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Paused"
 label_settings = SubResource("LabelSettings_pfaph")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="Button Panel/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="PauseMenu/Button Panel/PanelContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 15)
 layout_mode = 2
 
-[node name="ResumeButton" type="Button" parent="Button Panel/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="ResumeButton" type="Button" parent="PauseMenu/Button Panel/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 shortcut = SubResource("Shortcut_u2hel")
 text = "Resume"
 
-[node name="RestartButton" type="Button" parent="Button Panel/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="RestartButton" type="Button" parent="PauseMenu/Button Panel/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Restart"
 
-[node name="MainMenu" type="Button" parent="Button Panel/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="MainMenu" type="Button" parent="PauseMenu/Button Panel/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "Exit to main menu"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PauseMenu"]
 autoplay = "Unpause"
 libraries = {
 "": SubResource("AnimationLibrary_d5tew")
 }
+
+[node name="ded_screen" type="PanelContainer" parent="."]
+visible = false
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="ded_screen"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="ded_screen/PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ded_screen/PanelContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ded_screen/PanelContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 40)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ded_screen/PanelContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 100)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 43
+bbcode_enabled = true
+text = "[center]You ded :("
+
+[node name="Button" type="Button" parent="ded_screen/PanelContainer/PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+text = "Return to main menu"

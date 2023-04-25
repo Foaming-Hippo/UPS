@@ -20,11 +20,11 @@ func _process(_delta):
 			move = player.global_position
 			
 			# Do nothing if not sucking
-			if player.get_meta("sucking") != true:
+			if player.sucking != true:
 				return
 				
 			# Put the mail in motion, pass until it collides with the player
-			collider = get_parent().move_and_collide((move - get_parent().global_position) * _delta * 2)
+			collider = get_parent().move_and_collide((move - get_parent().global_position) * _delta * 5)
 			if collider == null:
 				return
 			# Only delete the mail if the object it collides with is close to the player
@@ -32,5 +32,5 @@ func _process(_delta):
 			elif abs(collider.get_position() - move) > Vector3(.6, .6, .6):
 				return
 			
-			player.get_node("UI/player_info").add_mail(1)
+			player.change_mail(1)
 			get_parent().queue_free()

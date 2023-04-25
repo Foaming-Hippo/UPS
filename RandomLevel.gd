@@ -5,6 +5,7 @@ var segment_instance
 var segment_positions = []
 var segment_instances = []
 var seg_list = []
+var end_list = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,14 +15,21 @@ func _ready():
 	for y in segment_instance.spaces:
 			segment_positions.push_back(segment_instance.transform.origin + y)
 			segment_instances.push_back(segment_instance)
-	seg_list.push_back(segment_instance)
+	end_list.push_back(segment_instance)
 	
-	for fff in 2:
-		print("\n\n\n\n\n\n")
+	for fff in 3:
+		# Save generated ends to seg_list to iterate over
+		seg_list.clear()
+		seg_list.append_array(end_list)
+		# Clear end_list so it only has the newly generated ends
+		end_list.clear()
+
 		for x in seg_list:
-			seg_list = generate_ends(x, x.transform.origin)
-	
-	print(seg_list)
+			end_list += generate_ends(x, x.transform.origin)
+
+	print(end_list)
+	for x in end_list:
+		snip_ends(x, x.transform.origin)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -46,6 +54,9 @@ func generate_ends(segment_instance, position):
 		# Move the new segment into place
 		print(segment_instance.offset[x])
 		print(new_segment_instance.child_offset[x])
+		
+		if segment_instance.offset[x] == null or new_segment_instance.child_offset[x] == null:
+			continue
 			
 		new_segment_instance.transform.origin = position + segment_instance.offset[x] + new_segment_instance.child_offset[x]
 		
@@ -55,13 +66,7 @@ func generate_ends(segment_instance, position):
 			
 		# For each generated segment, check each of it's ends and see if it is compatible
 		if not calculate_compatible(new_segment_instance, segment_instance, segment_positions):
-			#error_segment = load("res://scenes/segments/error_node.tscn")
-			#error_segment_instance = error_segment.instantiate()
-			#error_segment_instance.transform.origin = new_segment_instance.transform.origin
-			#error_segment_instance.transform.origin.y += 4
-			#add_child(error_segment_instance)
-			# Move the failed room up and snip the ends (prevents generating off of them)
-			#new_segment_instance.transform.origin.y += 8
+			snip_end(segment_positions, segment_instance, x, position)
 			continue
 
 		add_child(new_segment_instance)
@@ -73,6 +78,8 @@ func generate_ends(segment_instance, position):
 	
 	return generated_ends
 
+
+
 func snip_ends(segment_instance, position):
 	var child_segment = load("res://scenes/segments/wall.tscn")
 	var child_segment_instance
@@ -80,20 +87,51 @@ func snip_ends(segment_instance, position):
 	for x in segment_instance.end.size():
 		child_segment_instance = child_segment.instantiate()
 		child_segment_instance.init()
+
+		if segment_instance.offset[x] == null or child_segment_instance.child_offset[x] == null:
+			continue
+
 		child_segment_instance.transform.origin = position + segment_instance.offset[x] + child_segment_instance.child_offset[x]
 		child_segment_instance.rotate_y(child_segment_instance.rotation_offset[ROOMS.reverse_type[x]])
-		
-		# Do not add segments that would overlap existing segments
-		if calculate_overlap(segment_instance, segment_instance.offset[x] + child_segment_instance.child_offset[x], position, segment_positions):
+
+		if contains_vector(segment_positions, position + segment_instance.offset[x] + child_segment_instance.check_spaces[x]):
+			print("uhm, occupied")
 			continue
+
+		# Do not add segments that would overlap existing segments
+		#if calculate_overlap(segment_instance, segment_instance.offset[x] + child_segment_instance.child_offset[x], position, segment_positions):
+		#	continue
 		
 		add_child(child_segment_instance)
 		segment_positions.push_back(child_segment_instance.transform.origin)
-		
+
+
+
+func snip_end(segment_positions, parent_segment, end, position):
+	var child_segment = load("res://scenes/segments/wall.tscn")
+	var child_segment_instance = child_segment.instantiate()
+	child_segment_instance.init()
+	
+	if segment_instance.offset[end] == null or child_segment_instance.child_offset[end] == null:
+		return 1
+	
+	child_segment_instance.transform.origin = position + parent_segment.offset[end] + child_segment_instance.child_offset[end]
+	child_segment_instance.rotate_y(child_segment_instance.rotation_offset[ROOMS.reverse_type[end]])
+
+	# Do not add segments that would overlap existing segments
+	if calculate_overlap(segment_instance, parent_segment.offset[end] + child_segment_instance.child_offset[end], position, segment_positions):
+		return 0
+	
+	add_child(child_segment_instance)
+	segment_positions.push_back(child_segment_instance.transform.origin)
+	return 0
+
+
 
 func random_segment(type):
 	var index = randi_range(0, ROOMS.rooms[type].size() - 1)
 	return ROOMS.rooms[type][index]
+
 
 
 func contains_vector(look_inside, look_for):
@@ -103,6 +141,7 @@ func contains_vector(look_inside, look_for):
 	return false
 
 
+
 func vector_find(look_inside, look_for):
 	for x in look_inside.size():
 		if look_inside[x].is_equal_approx(look_for):
@@ -110,11 +149,13 @@ func vector_find(look_inside, look_for):
 	return -1
 
 
+
 func calculate_overlap(segment_instance, offset, position, segment_positions):
 	for x in segment_instance.spaces:
 		if contains_vector(segment_positions, position + offset + x):
 			return true
 	return false
+
 
 
 func calculate_compatible(child_segment, parent_segment, segment_positions):

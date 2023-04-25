@@ -1,6 +1,5 @@
 extends CharacterBody3D
 
-
 const SPEED = 3.5
 const SPRINT = 10
 const ACCEL = 0.5
@@ -9,7 +8,6 @@ const MOUSE_SENS = 0.05
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-
 var yaw = 0
 var pitch = 0
 var rotation_vect
@@ -18,11 +16,21 @@ var sprinting = false
 var pew
 var viewport_size
 
+# Stats
+var sucking = false
+var keys = []
+var health = 100
+var mail = 0
+var money = 0
+signal update_stats
+signal dead
+
+
 
 func _ready():
+	update_stats.emit()
 	pew = get_node("Camera3D/Gun Pointer")
-	get_node("UI/player_info").add_health(100)
-	
+	#update_stats.emit()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	get_node("UI").get_tree().get_root().size_changed.connect(resize)
 	resize()
@@ -32,14 +40,36 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		$PauseMenu.pause()
 
+
+# <===== Player Stats =====>
+# These can probably be refactored into 1 function
+func change_health(amt):
+	health += amt
+	update_stats.emit()
+	if health <= 0:
+		dead.emit()
+
+
+func add_key(key):
+	keys.push_back(key)
+	update_stats.emit()
+
+func change_money(amt):
+	money += amt
+	update_stats.emit()
+
+func change_mail(amt):
+	mail += amt
+	update_stats.emit()
+# <==========>
+
+
+
+# <===== Player Movement =====>
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
-
-	# Handle Jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
 	
 	if Input.is_action_just_pressed("pewpew"):
 		print(pew.get_collider())
@@ -82,6 +112,10 @@ func _input(delta):
 
 		get_node("Collision").set_rotation(rotation_vect)
 		get_node("Camera3D").set_rotation(rotation_vect)
+# <==========>
+
+
+
 
 func resize():
 	viewport_size = get_node("UI").get_viewport_rect().size
