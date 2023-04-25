@@ -9,6 +9,7 @@ func _ready() -> void:
 	play_button.pressed.connect(unpause)
 	main_button.pressed.connect(mainmenu)
 	restart_button.pressed.connect(restart)
+	%return.pressed.connect(mainmenu)
 
 func mainmenu():
 	get_tree().change_scene_to_file("res://scenes/level_select.tscn")

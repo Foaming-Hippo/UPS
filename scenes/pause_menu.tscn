@@ -270,7 +270,6 @@ libraries = {
 }
 
 [node name="ded_screen" type="PanelContainer" parent="."]
-visible = false
 custom_minimum_size = Vector2(400, 200)
 layout_mode = 1
 anchors_preset = 8
@@ -305,7 +304,8 @@ theme_override_font_sizes/normal_font_size = 43
 bbcode_enabled = true
 text = "[center]You ded :("
 
-[node name="Button" type="Button" parent="ded_screen/PanelContainer/PanelContainer/VBoxContainer"]
+[node name="return" type="Button" parent="ded_screen/PanelContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(2.08165e-12, 50)
 layout_mode = 2
 text = "Return to main menu"
