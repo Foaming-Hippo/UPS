@@ -16,9 +16,11 @@ shadow_offset = Vector2(1, 10)
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5v5pg")
@@ -27,35 +29,42 @@ script = ExtResource("1_5v5pg")
 clip_contents = true
 custom_minimum_size = Vector2(2.08165e-12, 2.08165e-12)
 layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_4hu10")
 expand_mode = 1
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(400, 450)
 layout_mode = 1
-anchors_preset = 4
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_top = -324.0
-offset_right = 414.0
-offset_bottom = 324.0
-grow_vertical = 2
-color = Color(0.0588235, 0.0588235, 0.0588235, 0.85098)
-
-[node name="CenterContainer" type="CenterContainer" parent="ColorRect"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -324.0
-offset_right = 414.0
-offset_bottom = 324.0
+offset_left = -200.0
+offset_top = -225.0
+offset_right = 200.0
+offset_bottom = 225.0
+grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="ColorRect/CenterContainer"]
-custom_minimum_size = Vector2(414, 648)
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect/CenterContainer/PanelContainer"]
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Universal Package Stealers"
+label_settings = SubResource("LabelSettings_d3jnx")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
 custom_minimum_size = Vector2(2.08165e-12, 1)
 layout_mode = 2
 theme_override_constants/margin_left = 20
@@ -63,22 +72,27 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="play" type="Button" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
-text = "Universal Package Stealers"
-label_settings = SubResource("LabelSettings_d3jnx")
-horizontal_alignment = 1
-autowrap_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "New Game"
 
-[node name="play" type="Button" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="quit" type="Button" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
-size_flags_vertical = 3
-text = "Start Game"
-
-[node name="quit" type="Button" parent="ColorRect/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 4
+size_flags_vertical = 6
 text = "Quit"
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 1)
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20

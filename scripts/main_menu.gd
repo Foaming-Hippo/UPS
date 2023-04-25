@@ -16,9 +16,8 @@ func quit():
 	get_tree().quit()
 
 func play():
-	get_tree().change_scene_to_file("res://scenes/level_1.tscn")
+	get_tree().change_scene_to_file("res://scenes/level_select.tscn")
 	get_tree().paused = false
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func resize():
 	viewport_size = get_viewport_rect().size

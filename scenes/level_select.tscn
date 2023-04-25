@@ -109,20 +109,24 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="main_window/VBoxContainer/HBoxContainer/level_menu"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="main_window/VBoxContainer/HBoxContainer/level_menu/VBoxContainer"]
+[node name="test" type="Button" parent="main_window/VBoxContainer/HBoxContainer/level_menu/VBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(2.08165e-12, 100)
 layout_mode = 2
-text = "Insert a cool name for a level"
+text = "Static Test Level"
 
-[node name="Button2" type="Button" parent="main_window/VBoxContainer/HBoxContainer/level_menu/VBoxContainer"]
+[node name="generated_level" type="Button" parent="main_window/VBoxContainer/HBoxContainer/level_menu/VBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(2.08165e-12, 100)
 layout_mode = 2
-text = "I still need some names idk"
+text = "Randomly Generated Level"
 
-[node name="Button3" type="Button" parent="main_window/VBoxContainer/HBoxContainer/level_menu/VBoxContainer"]
+[node name="test_generated" type="Button" parent="main_window/VBoxContainer/HBoxContainer/level_menu/VBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(2.08165e-12, 100)
 layout_mode = 2
-text = "Cool McAwesomevill"
+text = "Level Generation Testing View
+"
 
 [node name="upgrade_menu" type="PanelContainer" parent="main_window/VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true

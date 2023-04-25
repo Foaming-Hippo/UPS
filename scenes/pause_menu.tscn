@@ -198,7 +198,7 @@ offset_right = 256.0
 grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="Button Panel"]
-custom_minimum_size = Vector2(256, 648)
+custom_minimum_size = Vector2(256, 450)
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Button Panel/PanelContainer"]
@@ -228,16 +228,6 @@ text = "Resume"
 layout_mode = 2
 size_flags_vertical = 3
 text = "Restart"
-
-[node name="NewButton" type="Button" parent="Button Panel/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "Main Level"
-
-[node name="TestButton" type="Button" parent="Button Panel/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "Test Level"
 
 [node name="MainMenu" type="Button" parent="Button Panel/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2

@@ -8,12 +8,19 @@ func _ready() -> void:
 	%quit.pressed.connect(confirm_exit)
 	%quitquit.pressed.connect(get_tree().quit)
 	%dont_quit.pressed.connect(dont_exit)
+	%test.pressed.connect(test_level)
+	%test_generated.pressed.connect(random_test_level)
 	get_tree().get_root().size_changed.connect(resize)
 	resize()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func test_level():
+	get_tree().change_scene_to_file("res://scenes/TestLevel.tscn")
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+func random_test_level():
+	get_tree().change_scene_to_file("res://scenes/segments/random_level.tscn")
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
 
 func level_menu():
 	%upgrade_menu.visible = false
